@@ -75,8 +75,9 @@ def check_g1(run_dir, rules, screen):
     if len(refs) != want:
         v.append(f"레퍼런스가 {len(refs)}개입니다 (필요: {want}개)")
     for r in refs:
-        if "uibowl" not in str(r.get("url", "")):
-            v.append(f"레퍼런스 {r.get('id', '?')}에 uibowl 링크가 없습니다")
+        url = str(r.get("url", ""))
+        if "uibowl" not in url and "사용자 제공" not in url:
+            v.append(f"레퍼런스 {r.get('id', '?')}에 uibowl 링크 또는 '사용자 제공' 출처 표시가 없습니다")
     points = load_stage(run_dir, "s2").get("points", [])
     need = rules["counts"]["analysisPointsMin"]
     if len(points) < need:
