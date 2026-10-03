@@ -1,5 +1,6 @@
 {
-  "source": "Figma 'workspace · 05 최종' 페이지에서 다시 읽어 온 실제 값 (2026-10-03). 라이브러리 미등록 상태라 컴포넌트 인스턴스 대신 fol-DESIGN.md 토큰값을 직접 적용한 프레임/텍스트로 제작했다.",
+  "source": "Figma 'workspace · 05 최종' 페이지에서 다시 읽어 온 실제 값 (2026-10-03, 사용자 피드백 반영 2차 수정). 라이브러리 미등록 상태라 컴포넌트 인스턴스 대신 fol-DESIGN.md 토큰값을 직접 적용한 프레임/텍스트로 제작했다.",
+  "revisionNote": "2026-10-03 사용자 피드백 4건 반영: (1) 모든 버튼 라벨을 프레임 전체 크기로 리사이즈하고 textAlignHorizontal/Vertical=CENTER, textAutoResize=NONE으로 변경해 수평·수직 중앙정렬 (2) primary blue(#0075DE) 배경 버튼(ConfirmButton·SendButton·모달 ConfirmButton)의 stroke를 전부 제거 — 특히 모달 ConfirmButton은 검정(#000000) stroke가 있었던 것을 확인해 제거 (3) 채팅 말풍선(ChatMsg_AI_1/_2, ChatMsg_User_1/_2, ChatMsg_Greeting) 배경을 전부 #FFFFFF로, 테두리를 #E6E6E6(hairline)으로 통일 — User 말풍선은 기존 #0075DE 배경+흰 텍스트였던 것을 흰 배경+검정(#000000) 텍스트로 변경 (4) 말풍선 내부 텍스트 좌우상 패딩을 기존 12px(AI_1/User_1/User_2/Greeting)·16px(AI_2)로 들쭉날쭉하던 것을 전부 16px로 통일하고, 말풍선 높이를 텍스트 높이+32px(상하 16px씩)로 재계산",
   "designTokensApplied": {
     "fontFamily": "Inter (NotionInter는 이 Figma 환경에 설치되어 있지 않아 fol-DESIGN.md 3.1의 명시된 대체 서체 Inter 사용)",
     "colorsUsed": ["#FFFFFF", "#000000", "#E6E6E6", "#F6F5F4", "#0075DE", "#1AAE39", "#A39E98", "#615D59", "#31302E", "#DDDDDD", "#62AEF0", "#D6B6F6", "#DD5B00", "#2A9D99", "#FF64C8"],
@@ -18,7 +19,7 @@
         { "name": "TopBar", "kind": "frame", "width": 1440, "height": 64, "fills": ["#FFFFFF"] },
         { "name": "TopBarDivider", "kind": "frame", "width": 1440, "height": 1, "fills": ["#E6E6E6"] },
         { "name": "ProjectSwitcher", "kind": "button", "width": 190, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 8 },
-        { "name": "ProjectSwitcher_label", "kind": "text", "width": 158, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15 },
+        { "name": "ProjectSwitcher_label", "kind": "text", "width": 158, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "note": "좌측 정렬 유지 (드롭다운 라벨, 중앙정렬 대상 아님)" },
         { "name": "Breadcrumb", "kind": "text", "width": 320, "height": 20, "fills": ["#615D59"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
         { "name": "TopBarIcon_0 (profile avatar)", "kind": "icon", "width": 44, "height": 44, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"] },
         { "name": "TopBarIcon_1 (settings gear)", "kind": "icon", "width": 44, "height": 44, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"] },
@@ -38,7 +39,7 @@
         { "name": "StepName_0..6", "kind": "text", "width": 150, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": "500 (활성 StepName_2만 600)", "fontSize": 15 },
         { "name": "StepBadge_0/1 (정리 완료)", "kind": "frame", "width": 78, "height": 22, "fills": ["#F6F5F4"], "strokes": ["#1AAE39"], "radius": 9999 },
         { "name": "StepBadge_0/1_label", "kind": "text", "width": 78, "height": 16, "fills": ["#1AAE39"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 12 },
-        { "name": "StepBadge_2 (작성 중)", "kind": "frame", "width": 78, "height": 22, "fills": ["#0075DE"], "strokes": ["#0075DE"], "radius": 9999 },
+        { "name": "StepBadge_2 (작성 중)", "kind": "frame", "width": 78, "height": 22, "fills": ["#0075DE"], "strokes": ["#0075DE"], "radius": 9999, "note": "배지(badge)는 버튼이 아니므로 검정 테두리 제거 대상 아님 — stroke가 fill과 동일한 #0075DE로 원래 검정이 아니었음, 변경 없음" },
         { "name": "StepBadge_2_label", "kind": "text", "width": 78, "height": 16, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 12 },
         { "name": "StepBadge_3..6 (미작성)", "kind": "frame", "width": 78, "height": 22, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999 },
         { "name": "StepBadge_3..6_label", "kind": "text", "width": 78, "height": 16, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 12 },
@@ -72,40 +73,43 @@
         { "name": "DetailPanel_Title", "kind": "text", "width": 236, "height": 24, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 16 },
         { "name": "DetailPanel_Summary", "kind": "text", "width": 236, "height": 60, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
         { "name": "DetailPanel_Meta", "kind": "text", "width": 236, "height": 20, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 14 },
-        { "name": "PendingSuggestionCard", "kind": "frame", "width": 752, "height": 132, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 12, "note": "S5에서 104→132 높이로 확장 (버튼 44px 터치 영역 확보)" },
+        { "name": "PendingSuggestionCard", "kind": "frame", "width": 752, "height": 132, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 12 },
         { "name": "PendingSuggestionCard_Badge", "kind": "frame", "width": 70, "height": 22, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999 },
         { "name": "PendingSuggestionCard_Badge_label", "kind": "text", "width": 70, "height": 16, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 12 },
         { "name": "PendingSuggestionCard_Text", "kind": "text", "width": 700, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
-        { "name": "ConfirmButton (반영하기)", "kind": "button", "width": 96, "height": 44, "fills": ["#0075DE"], "strokes": ["#0075DE"], "radius": 9999, "note": "28→44 높이로 확대 (터치 영역 44px)" },
-        { "name": "ConfirmButton_label", "kind": "text", "width": 96, "height": 17, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15 },
-        { "name": "RetryButton (다시 요청)", "kind": "button", "width": 100, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 8, "note": "28→44 높이로 확대" },
-        { "name": "RetryButton_label", "kind": "text", "width": 100, "height": 17, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15 },
+        { "name": "ConfirmButton (반영하기)", "kind": "button", "width": 96, "height": 44, "fills": ["#0075DE"], "strokes": [], "radius": 9999, "note": "S5 2차 수정: 검정이 아니었지만 fill과 같은 색 stroke를 완전히 제거해 '테두리 없이 배경색만' 규칙 적용" },
+        { "name": "ConfirmButton_label", "kind": "text", "width": 96, "height": 44, "x": 0, "y": 0, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "note": "S5 2차 수정: 라벨을 버튼 전체 크기(96×44)로 리사이즈 후 수평·수직 CENTER 정렬" },
+        { "name": "RetryButton (다시 요청)", "kind": "button", "width": 100, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 8 },
+        { "name": "RetryButton_label", "kind": "text", "width": 100, "height": 44, "x": 0, "y": 0, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "note": "S5 2차 수정: 라벨 100×44로 리사이즈, CENTER/CENTER 정렬" },
         { "name": "GhostAddSection", "kind": "button", "width": 752, "height": 44, "strokes": ["#E6E6E6"], "radius": 8, "note": "점선 테두리 (dashPattern 4,4)" },
-        { "name": "GhostAddSection_label", "kind": "text", "width": 752, "height": 20, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
+        { "name": "GhostAddSection_label", "kind": "text", "width": 752, "height": 44, "x": 0, "y": 0, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "note": "S5 2차 수정: 라벨 752×44로 리사이즈, CENTER/CENTER 정렬" },
         { "name": "ChatPanel", "kind": "frame", "width": 400, "height": 916, "fills": ["#FFFFFF"] },
         { "name": "ChatPanel_LeftBorder", "kind": "frame", "width": 1, "height": 916, "fills": ["#E6E6E6"] },
         { "name": "ChatHeaderRow", "kind": "frame", "width": 352, "height": 32 },
         { "name": "ChatHeaderRow_Title", "kind": "text", "width": 160, "height": 24, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 16 },
-        { "name": "FeedbackRequestButton", "kind": "button", "width": 140, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 8, "note": "36→44 높이로 확대" },
-        { "name": "FeedbackRequestButton_label", "kind": "text", "width": 140, "height": 20, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15 },
+        { "name": "FeedbackRequestButton", "kind": "button", "width": 140, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 8 },
+        { "name": "FeedbackRequestButton_label", "kind": "text", "width": 140, "height": 44, "x": 0, "y": 0, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "note": "S5 2차 수정: 라벨 140×44로 리사이즈, CENTER/CENTER 정렬" },
         { "name": "ChatDivider", "kind": "frame", "width": 400, "height": 1, "fills": ["#E6E6E6"] },
-        { "name": "ChatMsg_AI_1 / ChatMsg_AI_2 (AI 말풍선)", "kind": "frame", "width": "300/312", "height": "80/160", "fills": ["#F6F5F4"], "radius": 16 },
-        { "name": "ChatMsg_AI_1_text", "kind": "text", "width": 276, "height": 40, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
-        { "name": "ChatMsg_User_1 / ChatMsg_User_2 (사용자 말풍선)", "kind": "frame", "width": "280/280", "height": "56/48", "fills": ["#0075DE"], "strokes": ["#E6E6E6"], "radius": 16 },
-        { "name": "ChatMsg_User_1_text / _2_text", "kind": "text", "width": 256, "height": "40/20", "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
+        { "name": "ChatMsg_AI_1 (AI 말풍선)", "kind": "frame", "width": 300, "height": 72, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "note": "S5 2차 수정: 배경 #F6F5F4→#FFFFFF, 테두리 #E6E6E6 추가, 내부 텍스트 패딩 통일로 높이 80→72" },
+        { "name": "ChatMsg_AI_1_text", "kind": "text", "width": 268, "height": 40, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "note": "S5 2차 수정: 패딩 12px→16px 통일 (x 12→16, y 12→16, width 276→268)" },
+        { "name": "ChatMsg_AI_2 (AI 말풍선)", "kind": "frame", "width": 312, "height": 160, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "note": "S5 2차 수정: 배경 #F6F5F4→#FFFFFF, 테두리 #E6E6E6 추가. 내부 패딩은 원래부터 16px로 이미 통일되어 있어 크기 변경 없음" },
+        { "name": "ChatMsg_User_1 (사용자 말풍선)", "kind": "frame", "width": 280, "height": 72, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "note": "S5 2차 수정: 배경 #0075DE→#FFFFFF, 테두리 #E6E6E6 유지, 패딩 통일로 높이 56→72" },
+        { "name": "ChatMsg_User_1_text", "kind": "text", "width": 248, "height": 40, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "note": "S5 2차 수정: 텍스트색 #FFFFFF→#000000 (흰 배경 위 가독성), 패딩 12px→16px (width 256→248)" },
+        { "name": "ChatMsg_User_2 (사용자 말풍선)", "kind": "frame", "width": 280, "height": 52, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "note": "S5 2차 수정: 배경 #0075DE→#FFFFFF, 테두리 #E6E6E6 유지, 패딩 통일로 높이 48→52" },
+        { "name": "ChatMsg_User_2_text", "kind": "text", "width": 248, "height": 20, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "note": "S5 2차 수정: 텍스트색 #FFFFFF→#000000, 패딩 12px→16px (width 256→248)" },
         { "name": "ToggleRow (작성 완료 토글)", "kind": "text", "width": 250, "height": 20, "fills": ["#1AAE39"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14 },
         { "name": "ChatMsg_AI_2_heading", "kind": "text", "width": 280, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 15 },
         { "name": "ChatMsg_AI_2_b1/b2/b3", "kind": "text", "width": 280, "height": "20/40", "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
         { "name": "SourceBadge_1/_2 (출처 뱃지)", "kind": "frame", "width": "140/116", "height": 24, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999 },
         { "name": "SourceBadge_1/_2_label", "kind": "text", "width": "140/116", "height": 16, "fills": ["#615D59"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 12 },
         { "name": "SuggestionChipsRow", "kind": "frame", "width": 352, "height": 44 },
-        { "name": "SuggestionChip_1/2/3 (제안 칩)", "kind": "button", "width": "108/128/100", "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999, "note": "32→44 높이로 확대" },
-        { "name": "SuggestionChip_1/2/3_label", "kind": "text", "width": "108/128/100", "height": 20, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14 },
+        { "name": "SuggestionChip_1/2/3 (제안 칩)", "kind": "button", "width": "108/128/100", "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999 },
+        { "name": "SuggestionChip_1/2/3_label", "kind": "text", "width": "108/128/100", "height": 44, "x": 0, "y": 0, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "note": "S5 2차 수정: 라벨을 칩 전체 높이(44px)로 리사이즈, CENTER/CENTER 정렬" },
         { "name": "ChatInputRow", "kind": "frame", "width": 352, "height": 48 },
         { "name": "ChatInputField", "kind": "frame", "width": 260, "height": 48, "fills": ["#FFFFFF"], "strokes": ["#DDDDDD"], "radius": 4 },
         { "name": "ChatInputField_placeholder", "kind": "text", "width": 230, "height": 24, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 16 },
-        { "name": "SendButton", "kind": "button", "width": 84, "height": 48, "fills": ["#0075DE"], "strokes": ["#0075DE"], "radius": 9999 },
-        { "name": "SendButton_label", "kind": "text", "width": 84, "height": 24, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 16 }
+        { "name": "SendButton", "kind": "button", "width": 84, "height": 48, "fills": ["#0075DE"], "strokes": [], "radius": 9999, "note": "S5 2차 수정: stroke 제거 (테두리 없이 배경색만)" },
+        { "name": "SendButton_label", "kind": "text", "width": 84, "height": 48, "x": 0, "y": 0, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 16, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "note": "S5 2차 수정: 라벨 84×48로 리사이즈, CENTER/CENTER 정렬" }
       ]
     },
     {
@@ -113,17 +117,29 @@
       "width": 1440,
       "height": 980,
       "nodeCount": 163,
-      "note": "workspace-default와 TopBar/StepStatusList/DocumentEditorPanel(결과 섹션까지)/ChatPanel 동일 구조+토큰 (PendingSuggestionCard 없음). 차이점만 아래 기록, 공통 노드는 workspace-default 목록과 동일.",
+      "note": "workspace-default와 TopBar/StepStatusList/DocumentEditorPanel(결과 섹션까지)/ChatPanel 동일 구조+토큰 (PendingSuggestionCard 없음). S5 2차 수정(버튼 중앙정렬·파란 버튼 테두리 제거·말풍선 흰 배경+회색 테두리·패딩 16px 통일)도 아래 공통 항목에 동일 적용. 차이점만 아래 기록, 공통 노드는 workspace-default 목록과 동일.",
       "nodes": [
         { "name": "ModalOverlay", "kind": "frame", "width": 1440, "height": 980, "fills": ["#000000@0.45"] },
         { "name": "AiRewriteConfirmModal", "kind": "frame", "width": 520, "height": 260, "fills": ["#FFFFFF"], "radius": 16, "effect": "drop-shadow 0/23/52 rgba(0,0,0,0.16) — fol-DESIGN.md 4.4 Level 2 부유 그림자 적용" },
         { "name": "AiRewriteConfirmModal_Title", "kind": "text", "width": 456, "height": 28, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 20 },
         { "name": "AiRewriteConfirmModal_Body", "kind": "text", "width": 456, "height": 40, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
-        { "name": "CancelButton (취소)", "kind": "button", "width": 80, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 8, "note": "S5에서 x=332로 재배치 (확인 버튼 확대에 따른 겹침 방지)" },
-        { "name": "CancelButton_label", "kind": "text", "width": 80, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15 },
-        { "name": "ConfirmButton (확인)", "kind": "button", "width": 64, "height": 44, "fills": ["#0075DE"], "strokes": ["#000000"], "radius": 9999, "note": "원래 40×44(너비 미달)였던 것을 64×44로 확대해 44px 최소 터치 영역 충족" },
-        { "name": "ConfirmButton_label", "kind": "text", "width": 64, "height": 20, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15 },
-        { "name": "(공통 노드 154개 생략)", "kind": "frame", "note": "TopBar, ProjectSwitcher, StepStatusList(StepRow_0..6/StepBadge/StepDot/StepConnector/StepFooterIcon), DocumentEditorPanel(DocTitle~DetailPanel), GhostAddSection, ChatPanel(ChatHeaderRow~SendButton) — workspace-default와 동일 값으로 적용됨" }
+        { "name": "CancelButton (취소)", "kind": "button", "width": 80, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 8 },
+        { "name": "CancelButton_label", "kind": "text", "width": 80, "height": 44, "x": 0, "y": 0, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "note": "S5 2차 수정: 라벨 80×44로 리사이즈, CENTER/CENTER 정렬" },
+        { "name": "ConfirmButton (확인)", "kind": "button", "width": 64, "height": 44, "fills": ["#0075DE"], "strokes": [], "radius": 9999, "note": "S5 2차 수정: 검정(#000000) stroke가 있던 것을 확인해 제거 — 사용자 피드백에서 지적한 '파란 버튼의 검정 테두리' 사례" },
+        { "name": "ConfirmButton_label", "kind": "text", "width": 64, "height": 44, "x": 0, "y": 0, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "note": "S5 2차 수정: 라벨 64×44로 리사이즈, CENTER/CENTER 정렬" },
+        { "name": "ChatMsg_AI_1 (AI 말풍선)", "kind": "frame", "width": 300, "height": 72, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "note": "S5 2차 수정 동일 적용" },
+        { "name": "ChatMsg_AI_1_text", "kind": "text", "width": 268, "height": 40, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
+        { "name": "ChatMsg_User_1 (사용자 말풍선)", "kind": "frame", "width": 280, "height": 72, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "note": "S5 2차 수정 동일 적용" },
+        { "name": "ChatMsg_User_1_text", "kind": "text", "width": 248, "height": 40, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
+        { "name": "ChatMsg_AI_2 (AI 말풍선)", "kind": "frame", "width": 312, "height": 160, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "note": "S5 2차 수정 동일 적용" },
+        { "name": "ChatMsg_User_2 (사용자 말풍선)", "kind": "frame", "width": 280, "height": 52, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "note": "S5 2차 수정 동일 적용" },
+        { "name": "ChatMsg_User_2_text", "kind": "text", "width": 248, "height": 20, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
+        { "name": "FeedbackRequestButton_label", "kind": "text", "width": 140, "height": 44, "x": 0, "y": 0, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
+        { "name": "GhostAddSection_label", "kind": "text", "width": 752, "height": 44, "x": 0, "y": 0, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
+        { "name": "SuggestionChip_1/2/3_label", "kind": "text", "width": "108/128/100", "height": 44, "x": 0, "y": 0, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
+        { "name": "SendButton", "kind": "button", "width": 84, "height": 48, "fills": ["#0075DE"], "strokes": [], "radius": 9999, "note": "S5 2차 수정: stroke 제거" },
+        { "name": "SendButton_label", "kind": "text", "width": 84, "height": 48, "x": 0, "y": 0, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 16, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
+        { "name": "(공통 노드 136개 생략)", "kind": "frame", "note": "TopBar, ProjectSwitcher, StepStatusList(StepRow_0..6/StepBadge/StepDot/StepConnector/StepFooterIcon), DocumentEditorPanel(DocTitle~DetailPanel), GhostAddSection(프레임), FeedbackRequestButton(프레임), SuggestionChip_1/2/3(프레임), ChatHeaderRow~ChatInputField — workspace-default와 동일 값으로 적용됨" }
       ]
     },
     {
@@ -131,23 +147,26 @@
       "width": 1440,
       "height": 980,
       "nodeCount": 134,
-      "note": "TopBar/StepStatusList(모두 미작성)/ChatPanel 구조는 workspace-default와 동일 토큰. DocumentEditorPanel 내부만 AiEntryBanner로 대체.",
+      "note": "TopBar/StepStatusList(모두 미작성)/ChatPanel 구조는 workspace-default와 동일 토큰. DocumentEditorPanel 내부만 AiEntryBanner로 대체. S5 2차 수정(버튼 중앙정렬·파란 버튼 테두리 제거·말풍선 흰 배경+회색 테두리·패딩 16px 통일)도 ChatPanel 공통 요소에 동일 적용.",
       "nodes": [
         { "name": "AiEntryBanner", "kind": "frame", "width": 560, "height": 400 },
         { "name": "AiEntryBanner_Heading", "kind": "text", "width": 560, "height": 32, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 700, "fontSize": 26 },
         { "name": "AiEntryBanner_Input", "kind": "frame", "width": 560, "height": 56, "fills": ["#FFFFFF"], "strokes": ["#DDDDDD"], "radius": 4 },
         { "name": "AiEntryBanner_InputPlaceholder", "kind": "text", "width": 420, "height": 24, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 16 },
-        { "name": "AiEntryBanner_SendIcon", "kind": "icon", "width": 44, "height": 44, "fills": ["#0075DE"], "note": "40×40→44×44로 확대" },
+        { "name": "AiEntryBanner_SendIcon", "kind": "icon", "width": 44, "height": 44, "fills": ["#0075DE"], "note": "원형 아이콘 버튼, stroke 없음 — 검정 테두리 해당 사항 없음" },
         { "name": "Glyph_send + Vector", "kind": "image", "width": 20, "height": 20, "strokes": ["#FFFFFF"] },
         { "name": "AiEntryBanner_CardsLabel", "kind": "text", "width": 400, "height": 20, "fills": ["#615D59"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 14 },
-        { "name": "RecommendedCard_0..5 (추천 작업 카드)", "kind": "button", "width": 176, "height": 92, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 12 },
+        { "name": "RecommendedCard_0..5 (추천 작업 카드)", "kind": "button", "width": 176, "height": 92, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 12, "note": "아이콘+제목+메타 복합 카드형 버튼 — 사용자가 명시한 중앙정렬 대상(단일 라벨 CTA)이 아니므로 기존 좌측 정렬 레이아웃 유지" },
         { "name": "RecommendedCard_Icon_0..5 (아이콘 타일)", "kind": "image", "width": 28, "height": 28, "radius": 8, "fills": ["#62AEF0 / #D6B6F6 / #1AAE39 / #DD5B00 / #2A9D99 / #FF64C8 (카드별 1개씩, fol-DESIGN.md 2.5 스티커 팔레트)"] },
         { "name": "Glyph_spark + Vector (카드 아이콘 내부 글리프)", "kind": "image", "width": 14, "height": 14, "fills": ["#FFFFFF"] },
         { "name": "RecommendedCard_Title_0..5", "kind": "text", "width": 144, "height": "20/40", "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 15 },
         { "name": "RecommendedCard_Meta_0..5", "kind": "text", "width": 144, "height": 16, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12 },
-        { "name": "ChatMsg_Greeting", "kind": "frame", "width": 312, "height": 64, "fills": ["#F6F5F4"], "radius": 16 },
-        { "name": "ChatMsg_Greeting_text", "kind": "text", "width": 288, "height": 40, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
-        { "name": "(공통 노드: TopBar/StepStatusList/ChatHeaderRow~SendButton 등 119개 생략)", "kind": "frame", "note": "workspace-default와 동일 값으로 적용됨 (StepBadge는 전부 미작성 상태로 #F6F5F4/#A39E98)" }
+        { "name": "ChatMsg_Greeting", "kind": "frame", "width": 312, "height": 72, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "note": "S5 2차 수정: 배경 #F6F5F4→#FFFFFF, 테두리 #E6E6E6 추가, 패딩 통일로 높이 64→72" },
+        { "name": "ChatMsg_Greeting_text", "kind": "text", "width": 280, "height": 40, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "note": "S5 2차 수정: 패딩 12px→16px (width 288→280)" },
+        { "name": "FeedbackRequestButton_label", "kind": "text", "width": 140, "height": 44, "x": 0, "y": 0, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
+        { "name": "SendButton", "kind": "button", "width": 84, "height": 48, "fills": ["#0075DE"], "strokes": [], "radius": 9999, "note": "S5 2차 수정: stroke 제거" },
+        { "name": "SendButton_label", "kind": "text", "width": 84, "height": 48, "x": 0, "y": 0, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 16, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
+        { "name": "(공통 노드: TopBar/StepStatusList/ChatHeaderRow/FeedbackRequestButton(프레임) 등 117개 생략)", "kind": "frame", "note": "workspace-default와 동일 값으로 적용됨 (StepBadge는 전부 미작성 상태로 #F6F5F4/#A39E98)" }
       ]
     }
   ],
@@ -170,5 +189,27 @@
     "AiEntryBanner_SendIcon → 전송 (send/paper-plane 글리프, 흰색 on 배경 #0075DE)",
     "RecommendedCard_Icon_0..5 → fol-DESIGN.md 2.5 스티커 팔레트 색상 타일 + sparkle 글리프 (카드별 accent-sky/purple/green/orange/teal/pink 순환)",
     "모든 글리프는 ink-secondary(#31302E) 또는 on-primary(#FFFFFF) 단색 선/면 벡터로 직접 제작 — 라이브러리 아이콘 세트 미등록"
-  ]
+  ],
+  "s5SecondRevisionFixes": {
+    "buttonLabelCentering": [
+      "ConfirmButton_label (반영하기, 기본/확인 모달 공통 패턴)", "RetryButton_label (다시 요청)",
+      "FeedbackRequestButton_label (전체 피드백 요청, 3개 프레임 전부)", "GhostAddSection_label (+ 새 섹션 추가, 2개 프레임)",
+      "SuggestionChip_1/2/3_label (근거 더 연결하기/다른 관점 제안해줘/피드백 요청하기, 2개 프레임)",
+      "SendButton_label (보내기, 3개 프레임 전부)", "CancelButton_label (취소, 모달)", "ConfirmButton_label (확인, 모달)"
+    ],
+    "blueButtonStrokeRemoved": [
+      "ConfirmButton (반영하기, workspace-default) — 기존 stroke가 fill과 동일한 #0075DE였으나 완전 제거",
+      "SendButton (보내기, 3개 프레임 전부) — 기존 stroke #0075DE 완전 제거",
+      "ConfirmButton (확인, 모달) — 기존 stroke #000000(검정) 발견 및 제거"
+    ],
+    "chatBubbleRecolor": [
+      "ChatMsg_AI_1, ChatMsg_AI_2 (2개 프레임): 배경 #F6F5F4 → #FFFFFF, 테두리 #E6E6E6 신규 추가",
+      "ChatMsg_User_1, ChatMsg_User_2 (2개 프레임): 배경 #0075DE → #FFFFFF, 테두리 #E6E6E6 유지, 텍스트색 #FFFFFF → #000000",
+      "ChatMsg_Greeting (workspace-empty): 배경 #F6F5F4 → #FFFFFF, 테두리 #E6E6E6 신규 추가"
+    ],
+    "bubblePaddingUnified": [
+      "ChatMsg_AI_1_text, ChatMsg_User_1_text, ChatMsg_User_2_text, ChatMsg_Greeting_text: 좌/상 패딩 12px → 16px으로 통일, 말풍선 높이 = 텍스트 높이 + 32px(상하 16px씩) 재계산",
+      "ChatMsg_AI_2는 원래부터 16px 패딩이었으므로 기준값으로 삼아 변경 없음"
+    ]
+  }
 }
