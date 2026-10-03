@@ -56,6 +56,8 @@ def rel(path_str, cwd):
 
 
 def is_protected_doc(r):
+    if r.startswith("harness/reviews/"):
+        return False
     return (
         r in {"fol-PRD.md", "fol-DESIGN.md", "fol-story-service.md", "fol-story-workflow.md", "CLAUDE.md"}
         or r.startswith("harness/")
