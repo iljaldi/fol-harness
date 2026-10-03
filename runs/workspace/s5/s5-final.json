@@ -1,10 +1,36 @@
 {
-  "source": "Figma 'workspace · 05 최종' 페이지에서 다시 읽어 온 실제 값 (2026-10-03, 사용자 수동 편집 동기화 — 5차). 디자인은 사용자가 Figma에서 직접 수정했고, 이 파일은 그 결과를 그대로 읽어와 기록만 한 것이다. 라이브러리 미등록 상태라 컴포넌트 인스턴스 대신 fol-DESIGN.md 토큰값을 직접 적용한 프레임/텍스트로 구성되어 있다.",
-  "fifthRevisionNote": "2026-10-03 사용자가 Figma에서 직접 수정한 내용을 재추출해 동기화함 (디자인 변경 없음, 값만 재기록). get_metadata + use_figma 스크립트로 3개 프레임(37:2/37:149/37:296) 전체 노드의 fills/strokes/radius/font/padding/gap/width/height를 다시 읽었고, 아래 3가지 실질적 차이를 발견함:",
+  "source": "Figma 'workspace · 05 최종' 페이지에서 다시 읽어 온 실제 값 (2026-10-04, 일관성 문제 2건 수정 후 동기화 — 6차). 디자인은 라이브러리 미등록 상태라 컴포넌트 인스턴스 대신 fol-DESIGN.md 토큰값을 직접 적용한 프레임/텍스트로 구성되어 있다.",
+  "sixthRevisionNote": "2026-10-04 ui-designer가 '05 최종' 페이지에서 발견된 일관성 문제 2건을 직접 수정하고 Figma에서 다시 읽은 값으로 동기화함. 5차 동기화에서 기록된 불일치 중 2건(SavedBadge 프레임 간 불일치, workspace-empty StepRow_0 상태 표시 불일치)을 해소했다. RecommendedCard_Title fontSize 변경(5차 기록)은 이번 작업 범위가 아니라 그대로 둠.",
+  "sixthRevisionFixes": [
+    {
+      "issue": "SavedBadge 프레임 간 불일치",
+      "target": "workspace-ai-rewrite-confirm (node 37:149)의 SavedBadge(37:211)/SavedBadge_label(37:212)",
+      "before": { "badge": { "x": 666, "y": 28, "width": 110, "height": 24 }, "label": { "x": 0, "y": 4.5, "width": 110, "height": 16, "fontWeight": 600, "textAlignHorizontal": "CENTER", "characters": "자동 저장됨" } },
+      "after": { "badge": { "x": 684, "y": 28, "width": 92, "height": 24 }, "label": { "x": 17, "y": 4.5, "width": 59, "height": 16, "fontWeight": 400, "textAlignHorizontal": "CENTER", "characters": "자동 저장됨" } },
+      "reference": "workspace-default(37:2)의 SavedBadge(37:64)/SavedBadge_label(37:65) 실제 값과 동일하게 맞춤. 배지 x좌표도 684로 맞춰 DocumentEditorPanel 우측 24px 패딩 기준 776px에서 동일하게 우측 정렬되도록 함(두 프레임 모두 666/684+width=776로 우측 끝 일치)",
+      "note": "폰트 변경(Semi Bold→Regular) 과정에서 textAutoResize 모드도 default와 동일한 WIDTH_AND_HEIGHT로 맞춰 height가 16으로 정확히 유지되도록 함"
+    },
+    {
+      "issue": "workspace-empty StepRow_0('주제') 상태 표시 불일치",
+      "target": "workspace-empty (node 37:296)의 StepDot_0(37:313), StepBadge_0(37:315)/StepBadge_0_label(37:316)",
+      "before": {
+        "stepDot0_fill": "#A39E98",
+        "stepBadge0_fill": "#F6F5F4", "stepBadge0_stroke": "#E6E6E6",
+        "stepBadge0Label": { "fill": "#A39E98", "characters": "미작성", "width": 34, "x": 17, "y": 3.5 }
+      },
+      "after": {
+        "stepDot0_fill": "#0075DE",
+        "stepBadge0_fill": "#0075DE", "stepBadge0_stroke": "#0075DE",
+        "stepBadge0Label": { "fill": "#FFFFFF", "characters": "작성 중", "width": 37, "x": 16, "y": 3 }
+      },
+      "reference": "workspace-default/ai-rewrite-confirm의 StepRow_2(활성 행, '문제정의') 패턴을 그대로 참고: StepDot #0075DE, StepBadge bg/stroke #0075DE, label #FFFFFF weight400 size12 '작성 중'. cornerRadius(9999)·strokeWeight(1)·배지 프레임 크기(68x22)는 변경하지 않음(기존 값 유지, 다른 미작성 행과 동일)"
+    }
+  ],
+  "fifthRevisionNote": "2026-10-03 사용자가 Figma에서 직접 수정한 내용을 재추출해 동기화함 (디자인 변경 없음, 값만 재기록). get_metadata + use_figma 스크립트로 3개 프레임(37:2/37:149/37:296) 전체 노드의 fills/strokes/radius/font/padding/gap/width/height를 다시 읽었고, 아래 3가지 실질적 차이를 발견함 (이 중 1·2번은 6차에서 수정 완료, 3번은 범위 밖이라 유지):",
   "fifthRevisionDiffs": [
-    "SavedBadge 프레임 간 불일치: workspace-default(37:64/37:65)의 SavedBadge는 width 110→92, label width 110→59, label x 0→17, label fontWeight 600→400으로 변경되어 있었음(텍스트 '자동 저장됨'은 동일). 반면 workspace-ai-rewrite-confirm(37:211/212)의 SavedBadge는 width 110·label fontWeight 600으로 기존 그대로 남아있어, 두 프레임의 같은 요소가 서로 다른 값을 갖는 상태로 확인됨. default 쪽 새 값(x684+w92=776)은 DocumentEditorPanel 콘텐츠 우측 끝(24px 패딩 기준 776)에 정확히 맞춰져 있음.",
-    "workspace-empty의 StepRow_0(37:309)에 ActiveBg(#F6F5F4, 240x70)와 ActiveBar(#0075DE, 3x70)가 새로 추가되어 '주제' 행이 시각적으로 강조 표시됨. 다만 같은 행의 StepDot_0은 여전히 #A39E98(미작성 회색)이고 StepBadge_0_label 텍스트도 '미작성'으로 남아있어, 활성 강조 배경과 상태 표시(회색 점·미작성 배지)가 서로 불일치하는 상태로 확인됨. workspace-default/ai-rewrite-confirm 프레임의 StepRow_2(활성 행)는 ActiveBg/ActiveBar·파란 점·'작성 중' 배지가 모두 일치해 참고 기준이 됨.",
-    "workspace-empty의 RecommendedCard_Title_0..5(37:364/368/372/376/380/384) fontSize가 15→14로 변경됨. 그 결과 RecommendedCard_5의 제목('솔루션 아이디어 넓히기')이 2줄→1줄로 줄어들며 카드5 높이가 128→108px(나머지 카드와 동일)로, RecommendedCard_Meta_5의 y가 96→76px(나머지 카드와 동일)로 자동 재배치된 상태로 확인됨. 단, AiEntryBanner(37:356) 프레임 높이는 438px 그대로였고(카드가 줄어든 만큼 하단 여백만 약 20px 늘어남), 이 프레임 높이 자체는 수정 대상이 아니었던 것으로 보여 손대지 않았음."
+    "[6차에서 수정 완료] SavedBadge 프레임 간 불일치: workspace-default(37:64/37:65)의 SavedBadge는 width 110→92, label width 110→59, label x 0→17, label fontWeight 600→400으로 변경되어 있었음(텍스트 '자동 저장됨'은 동일). 반면 workspace-ai-rewrite-confirm(37:211/212)의 SavedBadge는 width 110·label fontWeight 600으로 기존 그대로 남아있어, 두 프레임의 같은 요소가 서로 다른 값을 갖는 상태로 확인됨.",
+    "[6차에서 수정 완료] workspace-empty의 StepRow_0(37:309)에 ActiveBg(#F6F5F4, 240x70)와 ActiveBar(#0075DE, 3x70)가 새로 추가되어 '주제' 행이 시각적으로 강조 표시됨. 다만 같은 행의 StepDot_0은 여전히 #A39E98(미작성 회색)이고 StepBadge_0_label 텍스트도 '미작성'으로 남아있어, 활성 강조 배경과 상태 표시(회색 점·미작성 배지)가 서로 불일치하는 상태로 확인됨.",
+    "workspace-empty의 RecommendedCard_Title_0..5(37:364/368/372/376/380/384) fontSize가 15→14로 변경됨. 그 결과 RecommendedCard_5의 제목('솔루션 아이디어 넓히기')이 2줄→1줄로 줄어들며 카드5 높이가 128→108px(나머지 카드와 동일)로, RecommendedCard_Meta_5의 y가 96→76px(나머지 카드와 동일)로 자동 재배치된 상태로 확인됨. 단, AiEntryBanner(37:356) 프레임 높이는 438px 그대로였고(카드가 줄어든 만큼 하단 여백만 약 20px 늘어남), 이 프레임 높이 자체는 수정 대상이 아니었던 것으로 보여 손대지 않았음. (6차 작업 범위 밖, 변경 없음)"
   ],
   "designTokensApplied": {
     "fontFamily": "Inter (NotionInter는 이 Figma 환경에 설치되어 있지 않아 fol-DESIGN.md 3.1의 명시된 대체 서체 Inter 사용)",
@@ -36,7 +62,7 @@
         { "name": "StepStatusList_RightBorder", "kind": "frame", "width": 1, "height": 916, "fills": ["#E6E6E6"] },
         { "name": "StepStatusList_Header", "kind": "text", "width": 190, "height": 16, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 12, "characters": "작업 단계" },
         { "name": "StepRow_0/1 (완료)", "kind": "menuItem", "width": 240, "height": 70, "radius": 8, "note": "자식: StepConnector(#E6E6E6,1px), StepDot(#1AAE39,8x8), StepName('주제'/'리서치', weight500,15), StepBadge('정리 완료', bg#F6F5F4·stroke#1AAE39·radius9999, label #1AAE39 weight400 size12)" },
-        { "name": "StepRow_2 (진행중, 활성)", "kind": "menuItem", "width": 240, "height": 70, "fills": ["#F6F5F4"], "radius": 8, "note": "자식: ActiveBg(#F6F5F4,240x70), ActiveBar(#0075DE,3x70), StepDot(#0075DE), StepName('문제정의' weight600 size15), StepBadge(bg#0075DE·stroke#0075DE·radius9999, label '작성 중' #FFFFFF weight400 size12)" },
+        { "name": "StepRow_2 (진행중, 활성)", "kind": "menuItem", "width": 240, "height": 70, "fills": ["#F6F5F4"], "radius": 8, "note": "자식: ActiveBg(#F6F5F4,240x70), ActiveBar(#0075DE,3x70), StepDot(#0075DE), StepName('문제정의' weight600 size15), StepBadge(bg#0075DE·stroke#0075DE·radius9999, label '작성 중' #FFFFFF weight400 size12 width37 x16 y3) — 활성 상태 표준 패턴, workspace-empty StepRow_0 수정 시 참고 기준으로 사용함" },
         { "name": "StepRow_3..6 (미작성)", "kind": "menuItem", "width": 240, "height": 70, "radius": 8, "note": "자식: StepDot(#A39E98), StepName('HMW'/'가설'/'솔루션'/'검증' weight500 size15), StepBadge(bg#F6F5F4·stroke#E6E6E6·radius9999, label '미작성' #A39E98 weight400 size12)" },
         { "name": "StepConnector_0..5", "kind": "frame", "width": 1, "height": 66, "fills": ["#E6E6E6"] },
         { "name": "StepFooterIcon_0 (도움말)", "kind": "icon", "x": 24, "y": 848, "width": 44, "height": 44, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"] },
@@ -45,8 +71,8 @@
         { "name": "DocumentEditorPanel_RightBorder", "kind": "frame", "width": 1, "height": 916, "fills": ["#E6E6E6"] },
         { "name": "DocHeaderRow", "kind": "frame", "x": 24, "y": 24, "width": 752, "height": 32 },
         { "name": "DocTitle", "kind": "text", "width": 300, "height": 28, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 700, "fontSize": 22, "characters": "문제정의" },
-        { "name": "SavedBadge", "kind": "frame", "x": 684, "y": 28, "width": 92, "height": 24, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999, "note": "5차 동기화 발견: width 110→92로 변경됨(사용자 수동 편집). ai-rewrite-confirm 프레임의 동일 요소(width110)와 불일치" },
-        { "name": "SavedBadge_label", "kind": "text", "x": 17, "y": 4.5, "width": 59, "height": 16, "fills": ["#1AAE39"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12, "characters": "자동 저장됨", "note": "5차 동기화 발견: width 110→59, x 0→17, fontWeight 600→400으로 변경됨. 텍스트 내용은 동일" },
+        { "name": "SavedBadge", "kind": "frame", "x": 684, "y": 28, "width": 92, "height": 24, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999, "note": "기준값(변경 없음). 6차에서 workspace-ai-rewrite-confirm의 동일 요소를 이 값에 맞춤" },
+        { "name": "SavedBadge_label", "kind": "text", "x": 17, "y": 4.5, "width": 59, "height": 16, "fills": ["#1AAE39"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12, "characters": "자동 저장됨", "note": "기준값(변경 없음)" },
         { "name": "DocSubtitle", "kind": "text", "width": 600, "height": 20, "fills": ["#615D59"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 14, "characters": "리서치 3건을 반영해 작성하는 중이에요 · 마지막 저장 2분 전" },
         { "name": "Divider_1/_2", "kind": "frame", "width": 800, "height": 1, "fills": ["#E6E6E6"] },
         { "name": "Heading_CoreProblem / Heading_Insights / SectionHeader_Results_label", "kind": "text", "width": 300, "height": 28, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 20, "characters": "핵심 문제 / 주요 인사이트 / 최근 피드백 요청 결과" },
@@ -118,10 +144,10 @@
       "width": 1440,
       "height": 980,
       "nodeCount": 156,
-      "note": "TopBar/StepStatusList/DocumentEditorPanel(결과 섹션까지)/ChatPanel 공통 구조+값은 workspace-default와 동일(5차 재확인, 변화 없음). SavedBadge만 workspace-default와 값이 다름(아래 명시). 차이점만 기록, 공통 노드는 workspace-default 목록 참고.",
+      "note": "TopBar/StepStatusList/DocumentEditorPanel(결과 섹션까지)/ChatPanel 공통 구조+값은 workspace-default와 동일(재확인, 변화 없음). SavedBadge는 6차에서 workspace-default와 동일한 값으로 수정 완료(아래 명시). 차이점만 기록, 공통 노드는 workspace-default 목록 참고.",
       "nodes": [
-        { "name": "SavedBadge", "kind": "frame", "x": 666, "y": 28, "width": 110, "height": 24, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999, "note": "workspace-default의 SavedBadge(width92)와 달리 변경되지 않음 — width110 그대로" },
-        { "name": "SavedBadge_label", "kind": "text", "x": 0, "y": 4.5, "width": 110, "height": 16, "fills": ["#1AAE39"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 12, "textAlignHorizontal": "CENTER", "characters": "자동 저장됨", "note": "workspace-default의 SavedBadge_label(fontWeight400, width59, x17)과 달리 변경되지 않음 — fontWeight600, width110, x0 그대로" },
+        { "name": "SavedBadge", "kind": "frame", "x": 684, "y": 28, "width": 92, "height": 24, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999, "note": "6차 수정: x 666→684, width 110→92로 변경해 workspace-default의 SavedBadge(동일 x/width)와 일치시킴" },
+        { "name": "SavedBadge_label", "kind": "text", "x": 17, "y": 4.5, "width": 59, "height": 16, "fills": ["#1AAE39"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12, "textAlignHorizontal": "CENTER", "characters": "자동 저장됨", "note": "6차 수정: fontWeight 600→400, width 110→59, x 0→17로 변경해 workspace-default의 SavedBadge_label과 일치시킴 (textAutoResize도 WIDTH_AND_HEIGHT로 맞춰 height 16 유지 확인)" },
         { "name": "GhostAddSection", "kind": "button", "x": 24, "y": 768, "width": 752, "height": 44, "strokes": ["#E6E6E6"], "radius": 8, "note": "PendingSuggestionCard 없음 → GhostAddSection이 더 위(y768)에 위치. 변경 없음" },
         { "name": "ModalOverlay", "kind": "frame", "width": 1440, "height": 980, "fills": ["#000000@0.45"] },
         { "name": "AiRewriteConfirmModal", "kind": "frame", "x": 460, "y": 360, "width": 520, "height": 260, "fills": ["#FFFFFF"], "radius": 16, "effect": "drop-shadow offset(0,23) radius52 — fol-DESIGN.md 4.4 Level 2 부유 그림자" },
@@ -143,25 +169,25 @@
       "width": 1440,
       "height": 980,
       "nodeCount": 116,
-      "note": "TopBar/ChatPanel 구조는 workspace-default와 동일 토큰(재확인, 변화 없음). DocumentEditorPanel 내부만 AiEntryBanner로 대체. StepStatusList는 이번 5차에서 StepRow_0에 ActiveBg/ActiveBar가 추가된 점이 workspace-default/ai-rewrite-confirm과 다름(아래 명시).",
+      "note": "TopBar/ChatPanel 구조는 workspace-default와 동일 토큰(재확인, 변화 없음). DocumentEditorPanel 내부만 AiEntryBanner로 대체. StepStatusList는 StepRow_0에 ActiveBg/ActiveBar가 있고(강조 표시), 6차에서 StepDot_0/StepBadge_0의 상태 표시를 '작성 중'(활성) 패턴으로 통일해 강조 배경과 일치시킴(아래 명시).",
       "nodes": [
-        { "name": "StepRow_0 (주제, 강조 표시됨)", "kind": "menuItem", "x": 0, "y": 52, "width": 240, "height": 70, "radius": 8, "note": "5차 동기화 발견: ActiveBg(#F6F5F4, 240x70)와 ActiveBar(#0075DE, 3x70)가 새로 추가되어 시각적으로 강조됨. 그러나 같은 행의 StepDot_0은 #A39E98(회색), StepBadge_0_label은 '미작성'으로 남아있어 활성 강조와 상태 표시가 불일치함" },
-        { "name": "StepDot_0", "kind": "frame", "width": 8, "height": 8, "fills": ["#A39E98"], "note": "ActiveBar(파란색)가 추가됐음에도 점은 여전히 회색(미작성) — 불일치" },
-        { "name": "StepBadge_0", "kind": "frame", "width": 68, "height": 22, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999 },
-        { "name": "StepBadge_0_label", "kind": "text", "width": 34, "height": 16, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12, "characters": "미작성", "note": "강조 표시된 행인데도 배지 텍스트는 여전히 '미작성' — 불일치" },
+        { "name": "StepRow_0 (주제, 강조+작성중 통일됨)", "kind": "menuItem", "x": 0, "y": 52, "width": 240, "height": 70, "radius": 8, "note": "ActiveBg(#F6F5F4, 240x70)와 ActiveBar(#0075DE, 3x70)로 시각적 강조. 6차 수정 후 StepDot_0/StepBadge_0도 같은 '작성 중' 상태로 통일되어 더 이상 불일치 없음" },
+        { "name": "StepDot_0", "kind": "frame", "width": 8, "height": 8, "fills": ["#0075DE"], "note": "6차 수정: #A39E98(회색/미작성) → #0075DE(파랑/작성중)로 변경. StepRow_2(활성) 패턴과 동일" },
+        { "name": "StepBadge_0", "kind": "frame", "width": 68, "height": 22, "fills": ["#0075DE"], "strokes": ["#0075DE"], "radius": 9999, "note": "6차 수정: fills #F6F5F4→#0075DE, strokes #E6E6E6→#0075DE로 변경. cornerRadius(9999)·strokeWeight(1)·프레임 크기(68x22)는 유지" },
+        { "name": "StepBadge_0_label", "kind": "text", "x": 16, "y": 3, "width": 37, "height": 16, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12, "characters": "작성 중", "note": "6차 수정: 텍스트 '미작성'→'작성 중', fill #A39E98→#FFFFFF, width 34→37, x 17→16, y 3.5→3 (StepRow_2의 StepBadge_2_label과 동일한 값)" },
         { "name": "StepRow_1..6 (미작성, 강조 없음)", "kind": "menuItem", "width": 240, "height": 70, "radius": 8, "note": "ActiveBg/ActiveBar 없음, StepDot #A39E98, StepBadge '미작성' — 변경 없음" },
-        { "name": "AiEntryBanner", "kind": "frame", "x": 120, "y": 258, "width": 560, "height": 438, "note": "높이 438px 그대로(변경 없음). 카드 영역에 필요한 최소 높이는 418px로 줄었으나(아래 RecommendedCard_5 참고) 프레임 자체는 손대지 않은 것으로 보임" },
+        { "name": "AiEntryBanner", "kind": "frame", "x": 120, "y": 258, "width": 560, "height": 438, "note": "높이 438px 그대로(변경 없음, 6차 작업 범위 아님)" },
         { "name": "AiEntryBanner_Heading", "kind": "text", "width": 560, "height": 32, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 700, "fontSize": 26, "textAlignHorizontal": "CENTER", "characters": "유아이볼콘텐츠님, 주제 단계부터 시작해볼까요?" },
         { "name": "AiEntryBanner_Input", "kind": "frame", "width": 560, "height": 56, "fills": ["#FFFFFF"], "strokes": ["#DDDDDD"], "radius": 4 },
         { "name": "AiEntryBanner_InputPlaceholder", "kind": "text", "width": 420, "height": 24, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 16, "characters": "다루고 싶은 주제를 자유롭게 입력해보세요" },
         { "name": "AiEntryBanner_SendIcon", "kind": "icon", "width": 44, "height": 44, "fills": ["#0075DE"] },
         { "name": "Glyph_send + Vector", "kind": "image", "width": 20, "height": 20, "strokes": ["#FFFFFF"] },
         { "name": "AiEntryBanner_CardsLabel", "kind": "text", "width": 400, "height": 20, "fills": ["#615D59"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 14, "characters": "오늘 시작하기 좋은 작업" },
-        { "name": "RecommendedCard_0..5 (추천 작업 카드)", "kind": "button", "width": 176, "height": 108, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 12, "note": "5차 동기화 발견: 전 카드 높이가 108px로 통일됨(이전엔 카드5만 128px였음) — 아래 Title fontSize 변경의 결과" },
+        { "name": "RecommendedCard_0..5 (추천 작업 카드)", "kind": "button", "width": 176, "height": 108, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 12, "note": "전 카드 높이 108px로 통일(5차 기록, 6차 작업 범위 아님, 변경 없음)" },
         { "name": "RecommendedCard_Icon_0..5 (아이콘 타일)", "kind": "image", "width": 28, "height": 28, "x": 16, "y": 16, "radius": 8, "fills": ["#62AEF0 / #D6B6F6 / #1AAE39 / #DD5B00 / #2A9D99 / #FF64C8"] },
         { "name": "Glyph_spark + Vector", "kind": "image", "width": 14, "height": 14, "fills": ["#FFFFFF"] },
-        { "name": "RecommendedCard_Title_0..5", "kind": "text", "x": 16, "y": 48, "width": 144, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 14, "note": "5차 동기화 발견: fontSize 15→14로 변경됨. 그 결과 card5 제목('솔루션 아이디어 넓히기')이 2줄→1줄(height 40→20)로 줄어듦", "characters": "리서치 노트 요약하기 / 인터뷰 공통 패턴 찾기 / 문제정의 초안 만들기 / 경쟁 서비스 비교하기 / 가설 검증 계획 세우기 / 솔루션 아이디어 넓히기" },
-        { "name": "RecommendedCard_Meta_0..5", "kind": "text", "x": 16, "y": 76, "width": 144, "height": 16, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12, "note": "card5의 Meta y도 96→76으로 나머지 카드와 통일됨(제목이 1줄로 줄며 자동 재배치)", "characters": "♥ 128명 사용 / ♥ 94명 사용 / ♥ 201명 사용 / ♥ 76명 사용 / ♥ 63명 사용 / ♥ 88명 사용" },
+        { "name": "RecommendedCard_Title_0..5", "kind": "text", "x": 16, "y": 48, "width": 144, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 14, "note": "fontSize 14(5차 기록, 6차 작업 범위 아님, 변경 없음)", "characters": "리서치 노트 요약하기 / 인터뷰 공통 패턴 찾기 / 문제정의 초안 만들기 / 경쟁 서비스 비교하기 / 가설 검증 계획 세우기 / 솔루션 아이디어 넓히기" },
+        { "name": "RecommendedCard_Meta_0..5", "kind": "text", "x": 16, "y": 76, "width": 144, "height": 16, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12, "characters": "♥ 128명 사용 / ♥ 94명 사용 / ♥ 201명 사용 / ♥ 76명 사용 / ♥ 63명 사용 / ♥ 88명 사용" },
         { "name": "ChatMsg_Greeting", "kind": "frame", "x": 24, "y": 96, "width": 312, "height": 72, "fills": ["#F6F5F4"], "strokes": [], "radius": 16 },
         { "name": "ChatMsg_Greeting_text", "kind": "text", "width": 280, "height": 40, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "안녕하세요! 이번 단계에서 어떤 점이 궁금하신가요?" },
         { "name": "FeedbackRequestButton_label", "kind": "text", "width": 140, "height": 44, "x": 0, "y": 0, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
