@@ -1,6 +1,6 @@
 {
   "screen": "workspace",
-  "lastPassed": "G4",
+  "lastPassed": "G5",
   "gates": {
     "G1": {
       "result": "PASS",
@@ -57,6 +57,25 @@
       ],
       "violations": [],
       "checkedAt": "2026-10-03T20:27:53"
+    },
+    "G5": {
+      "status": "approved",
+      "reason": "",
+      "returnTo": null,
+      "figmaLink": "https://www.figma.com/design/3mCgJqOTZzSE9hFDFHiR9f/fol-harness?node-id=14-2",
+      "date": "2026-10-03",
+      "result": "PASS",
+      "failures": 0,
+      "totalFailures": 0,
+      "history": [
+        {
+          "result": "PASS",
+          "at": "2026-10-03T20:30:57",
+          "violations": 0
+        }
+      ],
+      "violations": [],
+      "checkedAt": "2026-10-03T20:30:57"
     }
   }
 }
