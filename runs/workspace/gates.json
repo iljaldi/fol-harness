@@ -1,0 +1,34 @@
+{
+  "screen": "workspace",
+  "lastPassed": "G2",
+  "gates": {
+    "G1": {
+      "result": "PASS",
+      "failures": 0,
+      "totalFailures": 0,
+      "history": [
+        {
+          "result": "PASS",
+          "at": "2026-10-03T20:15:03",
+          "violations": 0
+        }
+      ],
+      "violations": [],
+      "checkedAt": "2026-10-03T20:15:03"
+    },
+    "G2": {
+      "result": "PASS",
+      "failures": 0,
+      "totalFailures": 0,
+      "history": [
+        {
+          "result": "PASS",
+          "at": "2026-10-03T20:15:03",
+          "violations": 0
+        }
+      ],
+      "violations": [],
+      "checkedAt": "2026-10-03T20:15:03"
+    }
+  }
+}

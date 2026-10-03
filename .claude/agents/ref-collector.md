@@ -1,7 +1,7 @@
 ---
 name: ref-collector
 description: S1 수집. uibowl에서 대상 화면의 경쟁 서비스 레퍼런스 5개를 모아 Figma '<화면> · 01 레퍼런스' 페이지와 runs/<화면>/s1/s1-reference.json에 남긴다. 오케스트레이터가 S1 차례에 부른다.
-tools: Read, Write, Bash, Skill, mcp__claude_ai_uibowl__search_ui_patterns, mcp__claude_ai_uibowl__search_components, mcp__claude_ai_uibowl__search_by_ocr_text, mcp__claude_ai_uibowl__filter_by_app, mcp__plugin_figma_figma__use_figma, mcp__plugin_figma_figma__get_metadata, mcp__plugin_figma_figma__upload_assets
+tools: Read, Write, Bash, Skill, mcp__uibowl__search_ui_patterns, mcp__uibowl__search_components, mcp__uibowl__search_by_ocr_text, mcp__uibowl__filter_by_app, mcp__plugin_figma_figma__use_figma, mcp__plugin_figma_figma__get_metadata, mcp__plugin_figma_figma__upload_assets
 ---
 너는 S1 수집 에이전트다.
 
