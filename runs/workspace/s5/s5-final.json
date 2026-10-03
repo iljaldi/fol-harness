@@ -1,13 +1,15 @@
 {
-  "source": "Figma 'workspace · 05 최종' 페이지에서 다시 읽어 온 실제 값 (2026-10-03, 사용자 피드백 3차 수정). 라이브러리 미등록 상태라 컴포넌트 인스턴스 대신 fol-DESIGN.md 토큰값을 직접 적용한 프레임/텍스트로 제작했다.",
+  "source": "Figma 'workspace · 05 최종' 페이지에서 다시 읽어 온 실제 값 (2026-10-03, 사용자 피드백 4차 수정). 라이브러리 미등록 상태라 컴포넌트 인스턴스 대신 fol-DESIGN.md 토큰값을 직접 적용한 프레임/텍스트로 제작했다.",
   "revisionNote": "2026-10-03 사용자 피드백 4건 반영: (1) 모든 버튼 라벨을 프레임 전체 크기로 리사이즈하고 textAlignHorizontal/Vertical=CENTER, textAutoResize=NONE으로 변경해 수평·수직 중앙정렬 (2) primary blue(#0075DE) 배경 버튼(ConfirmButton·SendButton·모달 ConfirmButton)의 stroke를 전부 제거 (3) 채팅 말풍선 배경을 전부 #FFFFFF로, 테두리를 #E6E6E6(hairline)으로 통일 — User 말풍선은 흰 배경+검정 텍스트로 변경 (4) 말풍선 내부 텍스트 좌우상 패딩을 전부 16px로 통일",
   "thirdRevisionNote": "2026-10-03 사용자 피드백 2차 라운드 4건 반영: (1) ChatMsg_AI_2 내부 불릿 텍스트(b1/b2/b3)와 SourceBadge 행이 겹쳐 보이던 문제를 텍스트 실측 높이 기반으로 재배치해 해결 — heading/b1/b2/b3를 textAutoResize=HEIGHT로 실제 줄바꿈 높이를 측정한 뒤 8px 간격으로 쌓고, SourceBadge 행 앞에는 16px 간격을 추가. 프레임 높이가 160→216px로 늘어나 그 아래 SuggestionChipsRow·ChatMsg_User_2를 56px씩 아래로 밀어 겹침 없이 재배치했다. default·ai-rewrite-confirm 2개 프레임 모두 동일 적용 (2) '반영하기'(ConfirmButton, PendingSuggestionCard 안) · '보내기'(SendButton, 3개 프레임) · 모달 '확인'(ConfirmButton)의 radius를 9999(pill) → 8(rounded.md, fol-DESIGN.md 4.2 유틸리티 버튼 표준값)으로 변경. '취소'(CancelButton)·'다시 요청'(RetryButton)은 기존부터 radius 8이었고 이번 변경 대상이 아니므로 손대지 않음 (3) AI가 보내는 말풍선(ChatMsg_AI_1·ChatMsg_AI_2·ChatMsg_Greeting)의 배경을 #FFFFFF → #F6F5F4(colors.canvas-soft)로 되돌리고, 테두리(#E6E6E6)는 제거 — 회색 배경 자체로 구분되므로 테두리 없는 쪽이 자연스럽다고 판단. User 말풍선(ChatMsg_User_1/_2)은 흰 배경+테두리 유지, 이번 변경 대상 아님 (4) SuggestionChip_1/2/3 라벨 텍스트를 '근거 더 연결하기'→'근거 연결', '다른 관점 제안해줘'→'다른 관점', '피드백 요청하기'→'피드백 요청'으로 축약하고, 좌우 패딩을 24px(spacing.allowed 중 큰 값)로 넉넉하게 재설정, 텍스트 실측 너비 기반으로 칩 너비를 재계산해 축소. 칩 높이는 44px(최소 터치 영역)로 유지, 가로 간격 8px로 재배치해 겹침 없음",
+  "fourthRevisionNote": "2026-10-03 사용자 피드백 4차 라운드 2건 반영: (1) RecommendedCard_0..5(workspace-empty, AiEntryBanner 안 추천 작업 카드 6개) 내부 콘텐츠(아이콘+제목+메타 텍스트)의 상하 패딩을 16px로 통일 — 기존엔 상단 패딩 16px, 하단 패딩 0px로 서로 달랐다(메타 텍스트 바닥이 카드 테두리에 거의 붙어 있었음). 카드0~4는 높이 92→108px로 재계산(콘텐츠 바닥 92 + 하단패딩16). 카드5는 제목이 2줄로 줄바꿈되어(title height 40) 기존엔 메타 텍스트(y76)가 제목과 겹쳐 있었던 추가 문제도 함께 해결 — 메타 y를 제목 바닥+8px 간격 기준으로 76→96으로 재배치하고, 높이를 92→128px로 재계산(콘텐츠 바닥 112 + 하단패딩16). 카드 높이가 늘어나며 1행(카드0~2, 높이108)과 2행(카드3~5) 사이 간격이 16→0px로 줄어들던 것을 2행 전체를 286px(1행 바닥270 + 16px 간격)로 16px씩 내려 간격을 16px로 복원했고, 이에 따라 AiEntryBanner 프레임 높이를 400→438px(2행 중 가장 큰 카드5 바닥414 + 하단여백24)로 재계산했다. (2) ChatInputField(default·ai-rewrite-confirm·empty 3개 프레임 전부) 안 '메시지를 입력하세요' 플레이스홀더 텍스트의 상하 여백을 통일 — 기존엔 상단 16px/하단 8px로 텍스트가 입력창 안에서 위로 치우쳐 있었다. 텍스트 y를 16→12로 옮겨 상하 12px/12px로 통일(입력창 높이48, 텍스트 높이24 기준 수직 중앙). 12px는 spacing.allowed에 포함된 값.",
   "designTokensApplied": {
     "fontFamily": "Inter (NotionInter는 이 Figma 환경에 설치되어 있지 않아 fol-DESIGN.md 3.1의 명시된 대체 서체 Inter 사용)",
     "colorsUsed": ["#FFFFFF", "#000000", "#E6E6E6", "#F6F5F4", "#0075DE", "#1AAE39", "#A39E98", "#615D59", "#31302E", "#DDDDDD", "#62AEF0", "#D6B6F6", "#DD5B00", "#2A9D99", "#FF64C8"],
     "radiusUsed": [0, 4, 8, 12, 16, 9999],
     "fontSizeUsed": [12, 14, 15, 16, 20, 22, 26],
-    "fontWeightUsed": [400, 500, 600, 700]
+    "fontWeightUsed": [400, 500, 600, 700],
+    "spacingUsed": [0, 4, 8, 12, 16, 24, 28, 32]
   },
   "frames": [
     {
@@ -100,22 +102,22 @@
         { "name": "ChatMsg_User_2_text", "kind": "text", "width": 248, "height": 20, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
         { "name": "ToggleRow (작성 완료 토글)", "kind": "text", "width": 250, "height": 20, "fills": ["#1AAE39"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14 },
         { "name": "ChatMsg_AI_2_heading", "kind": "text", "x": 16, "y": 16, "width": 280, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 15, "characters": "핵심 문제 제안" },
-        { "name": "ChatMsg_AI_2_b1", "kind": "text", "x": 16, "y": 44, "width": 280, "height": 40, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "• 체크아웃 완료까지 평균 4.2단계가 소요돼요", "note": "S5 3차 수정: y 40→44 (textAutoResize=HEIGHT로 실측, heading 아래 8px 간격)" },
-        { "name": "ChatMsg_AI_2_b2", "kind": "text", "x": 16, "y": 92, "width": 280, "height": 20, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "• 결제수단 등록 단계에서 38%가 이탈해요", "note": "S5 3차 수정: y 64→92 — 이전엔 b1(40px)과 16px 겹쳤던 것을 b1 실측 바닥 + 8px 간격으로 재배치" },
-        { "name": "ChatMsg_AI_2_b3", "kind": "text", "x": 16, "y": 120, "width": 280, "height": 40, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "• 모바일 이탈률이 데스크톱보다 1.6배 높아요", "note": "S5 3차 수정: y 88→120 — b2 바닥 + 8px 간격으로 재배치" },
-        { "name": "SourceBadge_1/_2 (출처 뱃지)", "kind": "frame", "width": "140/116", "height": 24, "x": "16/164", "y": 176, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999, "note": "S5 3차 수정: y 116→176 — b3 바닥(160) + 16px 간격으로 재배치해 더 이상 b3와 겹치지 않음. 색상·radius는 이번 수정 대상 아님, 변경 없음" },
+        { "name": "ChatMsg_AI_2_b1", "kind": "text", "x": 16, "y": 44, "width": 280, "height": 40, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "• 체크아웃 완료까지 평균 4.2단계가 소요돼요" },
+        { "name": "ChatMsg_AI_2_b2", "kind": "text", "x": 16, "y": 92, "width": 280, "height": 20, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "• 결제수단 등록 단계에서 38%가 이탈해요" },
+        { "name": "ChatMsg_AI_2_b3", "kind": "text", "x": 16, "y": 120, "width": 280, "height": 40, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "• 모바일 이탈률이 데스크톱보다 1.6배 높아요" },
+        { "name": "SourceBadge_1/_2 (출처 뱃지)", "kind": "frame", "width": "140/116", "height": 24, "x": "16/164", "y": 176, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999 },
         { "name": "SourceBadge_1/_2_label", "kind": "text", "width": "140/116", "height": 16, "fills": ["#615D59"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 12 },
-        { "name": "SuggestionChipsRow", "kind": "frame", "width": 352, "height": 44, "x": 24, "y": 524, "note": "S5 3차 수정: y 468→524 — ChatMsg_AI_2가 56px 커지며 밀려 내려간 연쇄 재배치" },
-        { "name": "SuggestionChip_1 (근거 연결)", "kind": "button", "x": 0, "y": 0, "width": 109, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999, "note": "S5 3차 수정: 라벨 '근거 더 연결하기'→'근거 연결'로 축약, 좌우 패딩 24px 재설정, 너비 108→109(텍스트 실측+패딩 기반 재계산)" },
+        { "name": "SuggestionChipsRow", "kind": "frame", "width": 352, "height": 44, "x": 24, "y": 524 },
+        { "name": "SuggestionChip_1 (근거 연결)", "kind": "button", "x": 0, "y": 0, "width": 109, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999 },
         { "name": "SuggestionChip_1_label", "kind": "text", "x": 0, "y": 0, "width": 109, "height": 44, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "characters": "근거 연결" },
-        { "name": "SuggestionChip_2 (다른 관점)", "kind": "button", "x": 117, "y": 0, "width": 104, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999, "note": "S5 3차 수정: 라벨 '다른 관점 제안해줘'→'다른 관점'으로 축약, 좌우 패딩 24px, 너비 128→104, x 116→117(칩1 너비+8px 간격 기준 재배치)" },
+        { "name": "SuggestionChip_2 (다른 관점)", "kind": "button", "x": 117, "y": 0, "width": 104, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999 },
         { "name": "SuggestionChip_2_label", "kind": "text", "x": 0, "y": 0, "width": 104, "height": 44, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "characters": "다른 관점" },
-        { "name": "SuggestionChip_3 (피드백 요청)", "kind": "button", "x": 229, "y": 0, "width": 117, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999, "note": "S5 3차 수정: 라벨 '피드백 요청하기'→'피드백 요청'으로 축약, 좌우 패딩 24px, 너비 100→117, x 252→229(칩2 너비+8px 간격 기준 재배치)" },
+        { "name": "SuggestionChip_3 (피드백 요청)", "kind": "button", "x": 229, "y": 0, "width": 117, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999 },
         { "name": "SuggestionChip_3_label", "kind": "text", "x": 0, "y": 0, "width": 117, "height": 44, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "characters": "피드백 요청" },
-        { "name": "ChatInputRow", "kind": "frame", "width": 352, "height": 48, "note": "y=844 고정, 이번 연쇄 재배치의 영향 없음 (아래 요소와 충돌 없이 여유 공간 충분함을 확인함)" },
+        { "name": "ChatInputRow", "kind": "frame", "width": 352, "height": 48, "note": "y=844 고정, 연쇄 재배치의 영향 없음" },
         { "name": "ChatInputField", "kind": "frame", "width": 260, "height": 48, "fills": ["#FFFFFF"], "strokes": ["#DDDDDD"], "radius": 4 },
-        { "name": "ChatInputField_placeholder", "kind": "text", "width": 230, "height": 24, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 16 },
-        { "name": "SendButton (보내기)", "kind": "button", "width": 84, "height": 48, "fills": ["#0075DE"], "strokes": [], "radius": 8, "note": "S5 3차 수정: radius 9999(pill) → 8(rounded.md)로 변경, 사각형으로" },
+        { "name": "ChatInputField_placeholder", "kind": "text", "x": 13, "y": 12, "width": 230, "height": 24, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 16, "note": "S5 4차 수정: y 16→12 (입력창 높이48 안에서 상하 패딩 16/8 → 12/12로 통일해 텍스트 수직 중앙정렬). Figma에서 재확인한 실제 값" },
+        { "name": "SendButton (보내기)", "kind": "button", "width": 84, "height": 48, "fills": ["#0075DE"], "strokes": [], "radius": 8 },
         { "name": "SendButton_label", "kind": "text", "width": 84, "height": 48, "x": 0, "y": 0, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 16, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" }
       ]
     },
@@ -124,7 +126,7 @@
       "width": 1440,
       "height": 980,
       "nodeCount": 163,
-      "note": "workspace-default와 TopBar/StepStatusList/DocumentEditorPanel(결과 섹션까지)/ChatPanel 동일 구조+토큰 (PendingSuggestionCard 없음). S5 3차 수정(AI_2 불릿/SourceBadge 겹침 해소·버튼 radius 8·AI 말풍선 회색 복원·제안 칩 축약+재패딩)도 아래 공통 항목에 동일 적용. 차이점만 아래 기록, 공통 노드는 workspace-default 목록과 동일.",
+      "note": "workspace-default와 TopBar/StepStatusList/DocumentEditorPanel(결과 섹션까지)/ChatPanel 동일 구조+토큰 (PendingSuggestionCard 없음). S5 4차 수정(ChatInputField_placeholder 상하패딩 12/12 통일)도 공통 ChatInputRow에 동일 적용. 차이점만 아래 기록, 공통 노드는 workspace-default 목록과 동일.",
       "nodes": [
         { "name": "ModalOverlay", "kind": "frame", "width": 1440, "height": 980, "fills": ["#000000@0.45"] },
         { "name": "AiRewriteConfirmModal", "kind": "frame", "width": 520, "height": 260, "fills": ["#FFFFFF"], "radius": 16, "effect": "drop-shadow 0/23/52 rgba(0,0,0,0.16) — fol-DESIGN.md 4.4 Level 2 부유 그림자 적용" },
@@ -132,32 +134,34 @@
         { "name": "AiRewriteConfirmModal_Body", "kind": "text", "width": 456, "height": 40, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
         { "name": "CancelButton (취소)", "kind": "button", "width": 80, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 8, "note": "이번 수정 대상 아님 (이미 radius 8), 변경 없음" },
         { "name": "CancelButton_label", "kind": "text", "width": 80, "height": 44, "x": 0, "y": 0, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
-        { "name": "ConfirmButton (확인)", "kind": "button", "width": 64, "height": 44, "fills": ["#0075DE"], "strokes": [], "radius": 8, "note": "S5 3차 수정: radius 9999(pill) → 8(rounded.md)로 변경, 사각형으로" },
+        { "name": "ConfirmButton (확인)", "kind": "button", "width": 64, "height": 44, "fills": ["#0075DE"], "strokes": [], "radius": 8 },
         { "name": "ConfirmButton_label", "kind": "text", "width": 64, "height": 44, "x": 0, "y": 0, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
-        { "name": "ChatMsg_AI_1 (AI 말풍선)", "kind": "frame", "width": 300, "height": 72, "fills": ["#F6F5F4"], "strokes": [], "radius": 16, "note": "S5 3차 수정 동일 적용: 배경 #FFFFFF→#F6F5F4, 테두리 제거" },
+        { "name": "ChatMsg_AI_1 (AI 말풍선)", "kind": "frame", "width": 300, "height": 72, "fills": ["#F6F5F4"], "strokes": [], "radius": 16 },
         { "name": "ChatMsg_AI_1_text", "kind": "text", "width": 268, "height": 40, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
         { "name": "ChatMsg_User_1 (사용자 말풍선)", "kind": "frame", "width": 280, "height": 72, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "note": "이번 수정 대상 아님, 변경 없음" },
         { "name": "ChatMsg_User_1_text", "kind": "text", "width": 248, "height": 40, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
-        { "name": "ChatMsg_AI_2 (AI 말풍선)", "kind": "frame", "width": 312, "height": 216, "fills": ["#F6F5F4"], "strokes": [], "radius": 16, "note": "S5 3차 수정 동일 적용: 배경 복원 + 내부 불릿/SourceBadge 재배치로 높이 160→216" },
+        { "name": "ChatMsg_AI_2 (AI 말풍선)", "kind": "frame", "width": 312, "height": 216, "fills": ["#F6F5F4"], "strokes": [], "radius": 16 },
         { "name": "ChatMsg_AI_2_heading", "kind": "text", "x": 16, "y": 16, "width": 280, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 15, "characters": "핵심 문제 제안" },
         { "name": "ChatMsg_AI_2_b1", "kind": "text", "x": 16, "y": 44, "width": 280, "height": 40, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "• 체크아웃 완료까지 평균 4.2단계가 소요돼요" },
         { "name": "ChatMsg_AI_2_b2", "kind": "text", "x": 16, "y": 92, "width": 280, "height": 20, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "• 결제수단 등록 단계에서 38%가 이탈해요" },
         { "name": "ChatMsg_AI_2_b3", "kind": "text", "x": 16, "y": 120, "width": 280, "height": 40, "fills": ["#31302E"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "• 모바일 이탈률이 데스크톱보다 1.6배 높아요" },
-        { "name": "SourceBadge_1/_2", "kind": "frame", "width": "140/116", "height": 24, "x": "16/164", "y": 176, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999, "note": "S5 3차 수정 동일 적용: y 116→176" },
-        { "name": "ChatMsg_User_2 (사용자 말풍선)", "kind": "frame", "width": 280, "height": 52, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "x": 96, "y": 584, "note": "S5 3차 수정: y 528→584, 연쇄 재배치" },
+        { "name": "SourceBadge_1/_2", "kind": "frame", "width": "140/116", "height": 24, "x": "16/164", "y": 176, "fills": ["#F6F5F4"], "strokes": ["#E6E6E6"], "radius": 9999 },
+        { "name": "ChatMsg_User_2 (사용자 말풍선)", "kind": "frame", "width": 280, "height": 52, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 16, "x": 96, "y": 584 },
         { "name": "ChatMsg_User_2_text", "kind": "text", "width": 248, "height": 20, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15 },
         { "name": "FeedbackRequestButton_label", "kind": "text", "width": 140, "height": 44, "x": 0, "y": 0, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
         { "name": "GhostAddSection_label", "kind": "text", "width": 752, "height": 44, "x": 0, "y": 0, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
-        { "name": "SuggestionChipsRow", "kind": "frame", "width": 352, "height": 44, "x": 24, "y": 524, "note": "S5 3차 수정: y 468→524" },
+        { "name": "SuggestionChipsRow", "kind": "frame", "width": 352, "height": 44, "x": 24, "y": 524 },
         { "name": "SuggestionChip_1 (근거 연결)", "kind": "button", "x": 0, "y": 0, "width": 104, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999 },
         { "name": "SuggestionChip_1_label", "kind": "text", "x": 0, "y": 0, "width": 104, "height": 44, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "characters": "근거 연결" },
         { "name": "SuggestionChip_2 (다른 관점)", "kind": "button", "x": 112, "y": 0, "width": 104, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999 },
         { "name": "SuggestionChip_2_label", "kind": "text", "x": 0, "y": 0, "width": 104, "height": 44, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "characters": "다른 관점" },
         { "name": "SuggestionChip_3 (피드백 요청)", "kind": "button", "x": 224, "y": 0, "width": 117, "height": 44, "fills": ["#FFFFFF"], "strokes": ["#0075DE"], "radius": 9999 },
         { "name": "SuggestionChip_3_label", "kind": "text", "x": 0, "y": 0, "width": 117, "height": 44, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 14, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE", "characters": "피드백 요청" },
-        { "name": "SendButton (보내기)", "kind": "button", "width": 84, "height": 48, "fills": ["#0075DE"], "strokes": [], "radius": 8, "note": "S5 3차 수정: radius 9999→8" },
+        { "name": "ChatInputField", "kind": "frame", "width": 260, "height": 48, "fills": ["#FFFFFF"], "strokes": ["#DDDDDD"], "radius": 4 },
+        { "name": "ChatInputField_placeholder", "kind": "text", "x": 13, "y": 12, "width": 230, "height": 24, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 16, "note": "S5 4차 수정: y 16→12 (default와 동일 적용, 상하 패딩 12/12로 통일). Figma에서 재확인한 실제 값" },
+        { "name": "SendButton (보내기)", "kind": "button", "width": 84, "height": 48, "fills": ["#0075DE"], "strokes": [], "radius": 8 },
         { "name": "SendButton_label", "kind": "text", "width": 84, "height": 48, "x": 0, "y": 0, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 16, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
-        { "name": "(공통 노드 134개 생략)", "kind": "frame", "note": "TopBar, ProjectSwitcher, StepStatusList(StepRow_0..6/StepBadge/StepDot/StepConnector/StepFooterIcon), DocumentEditorPanel(DocTitle~DetailPanel), GhostAddSection(프레임), FeedbackRequestButton(프레임) — workspace-default와 동일 값으로 적용됨" }
+        { "name": "(공통 노드 132개 생략)", "kind": "frame", "note": "TopBar, ProjectSwitcher, StepStatusList(StepRow_0..6/StepBadge/StepDot/StepConnector/StepFooterIcon), DocumentEditorPanel(DocTitle~DetailPanel), GhostAddSection(프레임), FeedbackRequestButton(프레임), ChatInputRow(프레임) — workspace-default와 동일 값으로 적용됨" }
       ]
     },
     {
@@ -165,38 +169,44 @@
       "width": 1440,
       "height": 980,
       "nodeCount": 134,
-      "note": "TopBar/StepStatusList(모두 미작성)/ChatPanel 구조는 workspace-default와 동일 토큰. DocumentEditorPanel 내부만 AiEntryBanner로 대체. S5 3차 수정 중 AI 말풍선 회색 복원·SendButton radius 8은 ChatPanel 공통 요소에 동일 적용 (이 프레임에는 ChatMsg_AI_2/SuggestionChipsRow 패턴이 없어 1·4번 수정 대상 아님).",
+      "note": "TopBar/StepStatusList(모두 미작성)/ChatPanel 구조는 workspace-default와 동일 토큰. DocumentEditorPanel 내부만 AiEntryBanner로 대체. S5 4차 수정(RecommendedCard 상하패딩 통일·ChatInputField_placeholder 센터링)이 이 프레임에 적용됨.",
       "nodes": [
-        { "name": "AiEntryBanner", "kind": "frame", "width": 560, "height": 400 },
+        { "name": "AiEntryBanner", "kind": "frame", "width": 560, "height": 438, "x": 120, "y": 258, "note": "S5 4차 수정: 높이 400→438px. RecommendedCard 하단 패딩 통일로 카드 높이가 늘어나며(특히 카드5 128px) 2행이 아래로 밀려 전체 프레임 높이 재계산. Figma에서 재확인한 실제 값" },
         { "name": "AiEntryBanner_Heading", "kind": "text", "width": 560, "height": 32, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 700, "fontSize": 26 },
-        { "name": "AiEntryBanner_Input", "kind": "frame", "width": 560, "height": 56, "fills": ["#FFFFFF"], "strokes": ["#DDDDDD"], "radius": 4 },
+        { "name": "AiEntryBanner_Input", "kind": "frame", "width": 560, "height": 56, "fills": ["#FFFFFF"], "strokes": ["#DDDDDD"], "radius": 4, "note": "이번 수정 대상 아님 (ChatInputField가 아닌 AiEntryBanner 전용 입력창), 변경 없음" },
         { "name": "AiEntryBanner_InputPlaceholder", "kind": "text", "width": 420, "height": 24, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 16 },
         { "name": "AiEntryBanner_SendIcon", "kind": "icon", "width": 44, "height": 44, "fills": ["#0075DE"], "note": "원형 아이콘 버튼, stroke 없음 — 이번 수정 대상 아님" },
         { "name": "Glyph_send + Vector", "kind": "image", "width": 20, "height": 20, "strokes": ["#FFFFFF"] },
         { "name": "AiEntryBanner_CardsLabel", "kind": "text", "width": 400, "height": 20, "fills": ["#615D59"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 14 },
-        { "name": "RecommendedCard_0..5 (추천 작업 카드)", "kind": "button", "width": 176, "height": 92, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 12, "note": "복합 카드형 버튼, 이번 수정 대상 아님" },
-        { "name": "RecommendedCard_Icon_0..5 (아이콘 타일)", "kind": "image", "width": 28, "height": 28, "radius": 8, "fills": ["#62AEF0 / #D6B6F6 / #1AAE39 / #DD5B00 / #2A9D99 / #FF64C8 (카드별 1개씩, fol-DESIGN.md 2.5 스티커 팔레트)"] },
+        { "name": "RecommendedCard_0..4 (추천 작업 카드)", "kind": "button", "width": 176, "height": 108, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 12, "note": "S5 4차 수정: 높이 92→108px. 내부 콘텐츠(아이콘16~44, 제목48~68, 메타76~92) 상단 패딩16px는 그대로 두고 하단 패딩을 0→16px로 맞춤(카드 바닥92 + 16). 카드3,4는 추가로 y좌표 270→286 (행 간격 16px 복원을 위해 아래로 이동)" },
+        { "name": "RecommendedCard_5 (추천 작업 카드)", "kind": "button", "width": 176, "height": 128, "x": 384, "y": 286, "fills": ["#FFFFFF"], "strokes": ["#E6E6E6"], "radius": 12, "note": "S5 4차 수정: 높이 92→128px, y 270→286. 제목이 2줄로 줄바꿈되어(title height 40) 기존엔 메타 텍스트(y76)가 제목과 겹쳤던 문제도 함께 해결 — 메타 y를 제목 바닥(88)+8px 간격 기준 96으로 재배치, 하단 패딩을 상단과 동일한 16px로 맞춤(메타 바닥112 + 16=128)" },
+        { "name": "RecommendedCard_Icon_0..5 (아이콘 타일)", "kind": "image", "width": 28, "height": 28, "x": 16, "y": 16, "radius": 8, "fills": ["#62AEF0 / #D6B6F6 / #1AAE39 / #DD5B00 / #2A9D99 / #FF64C8 (카드별 1개씩, fol-DESIGN.md 2.5 스티커 팔레트)"] },
         { "name": "Glyph_spark + Vector (카드 아이콘 내부 글리프)", "kind": "image", "width": 14, "height": 14, "fills": ["#FFFFFF"] },
-        { "name": "RecommendedCard_Title_0..5", "kind": "text", "width": 144, "height": "20/40", "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 15 },
-        { "name": "RecommendedCard_Meta_0..5", "kind": "text", "width": 144, "height": 16, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12 },
-        { "name": "ChatMsg_Greeting", "kind": "frame", "width": 312, "height": 72, "fills": ["#F6F5F4"], "strokes": [], "radius": 16, "note": "S5 3차 수정: 배경 #FFFFFF→#F6F5F4로 복원, 테두리 #E6E6E6 제거" },
+        { "name": "RecommendedCard_Title_0..4", "kind": "text", "x": 16, "y": 48, "width": 144, "height": 20, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 15 },
+        { "name": "RecommendedCard_Title_5", "kind": "text", "x": 16, "y": 48, "width": 144, "height": 40, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 600, "fontSize": 15, "characters": "솔루션 아이디어 넓히기", "note": "2줄 줄바꿈으로 높이 40 (textAutoResize=HEIGHT 실측값). 변경 없음, 이번 수정의 기준값으로 사용됨" },
+        { "name": "RecommendedCard_Meta_0..4", "kind": "text", "x": 16, "y": 76, "width": 144, "height": 16, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12 },
+        { "name": "RecommendedCard_Meta_5", "kind": "text", "x": 16, "y": 96, "width": 144, "height": 16, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 12, "note": "S5 4차 수정: y 76→96 (제목 2줄 바닥88 + 8px 간격). Figma에서 재확인한 실제 값" },
+        { "name": "ChatMsg_Greeting", "kind": "frame", "width": 312, "height": 72, "fills": ["#F6F5F4"], "strokes": [], "radius": 16 },
         { "name": "ChatMsg_Greeting_text", "kind": "text", "width": 280, "height": 40, "x": 16, "y": 16, "fills": ["#000000"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 15, "characters": "안녕하세요! 이번 단계에서 어떤 점이 궁금하신가요?" },
         { "name": "FeedbackRequestButton_label", "kind": "text", "width": 140, "height": 44, "x": 0, "y": 0, "fills": ["#0075DE"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 15, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
-        { "name": "SendButton (보내기)", "kind": "button", "width": 84, "height": 48, "fills": ["#0075DE"], "strokes": [], "radius": 8, "note": "S5 3차 수정: radius 9999→8" },
+        { "name": "ChatInputField", "kind": "frame", "width": 260, "height": 48, "fills": ["#FFFFFF"], "strokes": ["#DDDDDD"], "radius": 4 },
+        { "name": "ChatInputField_placeholder", "kind": "text", "x": 13, "y": 12, "width": 230, "height": 24, "fills": ["#A39E98"], "fontFamily": "Inter", "fontWeight": 400, "fontSize": 16, "note": "S5 4차 수정: y 16→12 (default·ai-rewrite-confirm과 동일 적용, 상하 패딩 12/12로 통일). Figma에서 재확인한 실제 값" },
+        { "name": "SendButton (보내기)", "kind": "button", "width": 84, "height": 48, "fills": ["#0075DE"], "strokes": [], "radius": 8 },
         { "name": "SendButton_label", "kind": "text", "width": 84, "height": 48, "x": 0, "y": 0, "fills": ["#FFFFFF"], "fontFamily": "Inter", "fontWeight": 500, "fontSize": 16, "textAlignHorizontal": "CENTER", "textAlignVertical": "CENTER", "textAutoResize": "NONE" },
-        { "name": "(공통 노드: TopBar/StepStatusList/ChatHeaderRow/FeedbackRequestButton(프레임) 등 117개 생략)", "kind": "frame", "note": "workspace-default와 동일 값으로 적용됨 (StepBadge는 전부 미작성 상태로 #F6F5F4/#A39E98)" }
+        { "name": "(공통 노드: TopBar/StepStatusList/ChatHeaderRow/FeedbackRequestButton(프레임) 등 115개 생략)", "kind": "frame", "note": "workspace-default와 동일 값으로 적용됨 (StepBadge는 전부 미작성 상태로 #F6F5F4/#A39E98)" }
       ]
     }
   ],
   "touchTargetFixes": [
     "PendingSuggestionCard ConfirmButton/RetryButton: 28px → 44px 높이 (카드 전체 104→132px로 확장)",
-    "SuggestionChip_1/2/3: 32px → 44px 높이 (S5 3차 수정에서도 44px 유지, 축소하지 않음)",
+    "SuggestionChip_1/2/3: 32px → 44px 높이 (유지, 축소하지 않음)",
     "ProjectSwitcher: 32px → 44px 높이",
     "FeedbackRequestButton: 36px → 44px 높이",
     "TopBarIcon_0/1/2: 32×32 → 44×44",
     "StepFooterIcon_0/1: 36×36 → 44×44",
     "AiEntryBanner_SendIcon: 40×40 → 44×44",
-    "모달 ConfirmButton(확인): 40×44(너비 미달) → 64×44, CancelButton과 겹침 없도록 재배치"
+    "모달 ConfirmButton(확인): 40×44(너비 미달) → 64×44, CancelButton과 겹침 없도록 재배치",
+    "RecommendedCard_0..5: 높이 92→108/128px로 늘어났지만 원래부터 44px 이상이었으므로 터치 영역 기준은 이번 수정과 무관하게 계속 충족"
   ],
   "iconReplacements": [
     "TopBarIcon_0 → 프로필 아바타 (person 글리프)",
@@ -259,6 +269,20 @@
       "SuggestionChip_3_label: '피드백 요청하기' → '피드백 요청' (2개 프레임)",
       "각 칩의 좌우 패딩을 24px(spacing.allowed 중 큰 값)로 재설정하고, 텍스트 실측 너비 + 패딩*2로 칩 너비를 재계산해 축소: default [109, 104, 117], ai-rewrite-confirm [104, 104, 117]",
       "칩 높이는 44px(터치 영역 최소 기준) 그대로 유지, 가로 간격 8px(spacing.allowed)로 재배치해 3개 칩이 겹치지 않음을 확인함"
+    ]
+  },
+  "s5FourthRevisionFixes": {
+    "recommendedCardPaddingUnified": [
+      "RecommendedCard_0 (37:362), _1 (37:366), _2 (37:370), _3 (37:374), _4 (37:378): 높이 92→108px. 콘텐츠(아이콘 y16~44, 제목 y48~68, 메타 y76~92) 위치는 그대로 두고 카드 하단만 늘려 상단 패딩16px=하단 패딩16px로 통일 (하단 패딩 전 0px→후 16px)",
+      "RecommendedCard_5 (37:382): 높이 92→128px. 메타 텍스트(37:385)가 2줄짜리 제목(37:384, height40)과 겹쳐 있던 문제를 먼저 해결 — 메타 y를 76→96(제목 바닥88+8px 간격)으로 이동한 뒤, 하단 패딩을 상단과 동일한 16px로 맞춤(메타 바닥112+16=128)",
+      "카드 높이 증가로 1행(y162, 높이108)과 2행(기존 y270) 사이 간격이 16px→0px로 줄던 문제를 2행 전체(카드3,4,5)를 y270→286으로 16px 내려 간격 16px 복원",
+      "AiEntryBanner(37:356) 프레임 높이를 400→438px로 재계산(2행 중 가장 큰 카드5 바닥 414 + 하단여백 24px). DocumentEditorPanel(916px) 안에서 다른 요소와 겹치지 않음을 스크린샷으로 확인함",
+      "사용한 spacing 값(16, 8, 24)은 모두 rules.json design.spacing.allowed 안에 포함됨"
+    ],
+    "chatInputPlaceholderCentered": [
+      "ChatInputField_placeholder — default(37:146), ai-rewrite-confirm(37:285), workspace-empty(37:397) 3개 프레임 전부: y 16→12",
+      "입력창(ChatInputField) 높이 48px, 텍스트 높이 24px 기준 기존엔 상단패딩16px/하단패딩8px로 텍스트가 위로 치우쳐 있었음. y=12로 옮겨 상하 12px/12px로 통일 — 텍스트가 입력창 안에서 수직 중앙에 위치",
+      "12px는 rules.json design.spacing.allowed 안에 포함된 값"
     ]
   }
 }
