@@ -1,53 +1,55 @@
 {
-  "screen": "workspace",
-  "figmaPage": "workspace · 04 키스크린",
-  "figmaPageId": "14:2",
   "frames": [
     {
       "name": "workspace-default",
-      "figmaNodeId": "14:3",
       "width": 1440,
-      "height": 900,
+      "height": 980,
       "state": "default",
-      "note": "StepNavigator에서 '문제정의' 단계가 활성화된 일반 작업 상태. DocumentEditorPanel에는 작성된 문서 내용이, ChatPanel에는 AI와의 대화 기록이 채워져 있다.",
+      "referencePatterns": ["R5 (좌우 분할 밀도)", "R3 (채팅 말풍선·출처 뱃지·작성 완료 토글)", "R4 (요청 결과 표 + 상세 패널)"],
       "layers": [
+        "TopBar",
         "ProjectSwitcher",
-        "StepNavigator",
         "WorkspaceSplitLayout",
+        "StepStatusList",
         "DocumentEditorPanel",
+        "ResultTable",
+        "DetailPanel",
+        "PendingSuggestionCard",
         "ChatPanel",
         "FeedbackRequestButton"
       ]
     },
     {
-      "name": "workspace-awaiting-confirmation",
-      "figmaNodeId": "14:59",
+      "name": "workspace-ai-rewrite-confirm",
       "width": 1440,
-      "height": 900,
-      "state": "awaitingConfirmation",
-      "note": "ChatPanel에 AI가 제안한 문제정의 문장이 '확인 필요' 배지와 함께 표시되고(반영하기/다시 요청 버튼), DocumentEditorPanel에는 아직 반영되지 않았음을 보여주는 점선 테두리 표시가 있다 (규칙 B, confirmAiSuggestion 흐름).",
+      "height": 980,
+      "state": "awaitingRewriteConfirmation",
+      "referencePatterns": ["R2 (경고 문구 + 취소·확인 버튼, 좁은 폭 중앙 모달)"],
       "layers": [
+        "TopBar",
         "ProjectSwitcher",
-        "StepNavigator",
         "WorkspaceSplitLayout",
+        "StepStatusList",
         "DocumentEditorPanel",
         "ChatPanel",
-        "FeedbackRequestButton"
+        "FeedbackRequestButton",
+        "ModalOverlay",
+        "AiRewriteConfirmModal"
       ]
     },
     {
       "name": "workspace-empty",
-      "figmaNodeId": "14:117",
       "width": 1440,
-      "height": 900,
+      "height": 980,
       "state": "empty",
-      "note": "StepNavigator에서 첫 단계('주제')가 비어 있는 상태. DocumentEditorPanel 중앙에 AiEntryBanner가 표시되어 AI 대화 시작을 유도하고, ChatPanel에는 AI의 시작 인사 메시지만 존재한다.",
+      "referencePatterns": ["R1 (중앙 질문 인풋 + 추천 작업 카드 2x3 그리드)"],
       "layers": [
+        "TopBar",
         "ProjectSwitcher",
-        "StepNavigator",
         "WorkspaceSplitLayout",
-        "AiEntryBanner",
+        "StepStatusList",
         "DocumentEditorPanel",
+        "AiEntryBanner",
         "ChatPanel",
         "FeedbackRequestButton"
       ]
