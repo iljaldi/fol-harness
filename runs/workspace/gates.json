@@ -1,20 +1,30 @@
 {
   "screen": "workspace",
-  "lastPassed": "G6",
+  "lastPassed": "G2",
   "gates": {
     "G1": {
       "result": "PASS",
       "failures": 0,
-      "totalFailures": 0,
+      "totalFailures": 1,
       "history": [
         {
           "result": "PASS",
           "at": "2026-10-03T20:15:03",
           "violations": 0
+        },
+        {
+          "result": "FAIL",
+          "at": "2026-10-03T21:04:06",
+          "violations": 5
+        },
+        {
+          "result": "PASS",
+          "at": "2026-10-03T21:07:08",
+          "violations": 0
         }
       ],
       "violations": [],
-      "checkedAt": "2026-10-03T20:15:03"
+      "checkedAt": "2026-10-03T21:07:08"
     },
     "G2": {
       "result": "PASS",
@@ -25,13 +35,18 @@
           "result": "PASS",
           "at": "2026-10-03T20:15:03",
           "violations": 0
+        },
+        {
+          "result": "PASS",
+          "at": "2026-10-03T21:07:08",
+          "violations": 0
         }
       ],
       "violations": [],
-      "checkedAt": "2026-10-03T20:15:03"
+      "checkedAt": "2026-10-03T21:07:08"
     },
     "G3": {
-      "result": "PASS",
+      "result": null,
       "failures": 0,
       "totalFailures": 0,
       "history": [
@@ -45,7 +60,7 @@
       "checkedAt": "2026-10-03T20:19:19"
     },
     "G4": {
-      "result": "PASS",
+      "result": null,
       "failures": 0,
       "totalFailures": 0,
       "history": [
@@ -64,7 +79,7 @@
       "returnTo": null,
       "figmaLink": "https://www.figma.com/design/3mCgJqOTZzSE9hFDFHiR9f/fol-harness?node-id=14-2",
       "date": "2026-10-03",
-      "result": "PASS",
+      "result": null,
       "failures": 0,
       "totalFailures": 0,
       "history": [
@@ -78,7 +93,7 @@
       "checkedAt": "2026-10-03T20:30:57"
     },
     "G6": {
-      "result": "PASS",
+      "result": null,
       "failures": 0,
       "totalFailures": 0,
       "history": [

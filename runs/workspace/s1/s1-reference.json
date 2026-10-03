@@ -3,33 +3,33 @@
   "references": [
     {
       "id": "R1",
-      "url": "https://uibowl.io/name/Shopee%20(%EC%8B%B1%EA%B0%80%ED%8F%AC%EB%A5%B4)?patterns=AI&imgId=cmcy8sy1q0017js07uu20gr0h",
-      "app": "Shopee (싱가포르)",
-      "image": "https://d31var7gpnk8lm.cloudfront.net/new-8844826b-26f9-47c9-b447-9ec429bc6ace/new-0fe967ed-941e-44c8-a8cf-70785bc6608c/64bb9084-ff17-4624-a37d-4359a800adec/IMG_2634.png"
+      "url": "사용자 제공 캡처(유아이볼 AI CoS 제품)",
+      "app": "유아이볼 AI CoS",
+      "image": "runs/workspace/s1/img/R1.png"
     },
     {
       "id": "R2",
-      "url": "https://uibowl.io/name/%EC%91%A5%EC%91%A5%EC%B0%B0%EC%B9%B5?patterns=%EC%B1%97%EB%B4%87&imgId=cmub7l3vd001hjp04m96v8uo0",
-      "app": "쑥쑥찰칵",
-      "image": "https://d31var7gpnk8lm.cloudfront.net/new/17ca5af5-56b8-4770-99cc-80796aba70eb/app_ssukssukchalkak_202609_246.png"
+      "url": "사용자 제공 캡처(유아이볼 AI CoS 제품)",
+      "app": "유아이볼 AI CoS",
+      "image": "runs/workspace/s1/img/R2.png"
     },
     {
       "id": "R3",
-      "url": "https://uibowl.io/name/%EB%8B%AC%EB%8B%A4%EB%B0%A9?patterns=%EA%B8%80%EC%93%B0%EA%B8%B0&imgId=cmuc8yemp0004k0047byaynu7",
-      "app": "달다방",
-      "image": "https://d31var7gpnk8lm.cloudfront.net/new/30a01800-8732-4dc8-8d1a-c60ae5627272/app_daldabang_202609_25.png"
+      "url": "사용자 제공 캡처(유아이볼 AI CoS 제품)",
+      "app": "유아이볼 AI CoS",
+      "image": "runs/workspace/s1/img/R3.png"
     },
     {
       "id": "R4",
-      "url": "https://uibowl.io/name/%EC%9E%90%EB%A6%AC%ED%86%A1?patterns=%EC%B1%97%EB%B4%87&imgId=cmpmdtwdy0003l504wvwws0c2",
-      "app": "자리톡",
-      "image": "https://d31var7gpnk8lm.cloudfront.net/new-068d18a8-549b-4fce-b39f-2dbad0b358eb/new-9d995bbe-6a14-4237-b97a-aefd30e29367/4fdcb644-e334-405d-8cdd-90b8e2c3d5cb/224.PNG"
+      "url": "사용자 제공 캡처(유아이볼 AI CoS 제품)",
+      "app": "유아이볼 AI CoS",
+      "image": "runs/workspace/s1/img/R4.png"
     },
     {
       "id": "R5",
-      "url": "https://uibowl.io/website/%ED%86%A0%EC%8A%A4%20%EC%95%B1%EB%B9%8C%EB%8D%94?patterns=%EC%B1%97%EB%B4%87&imgId=cmol3hypp00q7kt047eh4sde2",
-      "app": "토스 앱빌더 (채널톡 위젯)",
-      "image": "https://d31var7gpnk8lm.cloudfront.net/new-15024c6c-487a-46a5-a7b1-c41f27e88f5f/new-f67966d8-032a-43f6-a1d5-881574e0789a/be8135f6-fec8-4c83-85c8-ecce71f60ee2/s222.png"
+      "url": "사용자 제공 캡처(유아이볼 AI CoS 제품)",
+      "app": "유아이볼 AI CoS",
+      "image": "runs/workspace/s1/img/R5.png"
     }
   ]
 }
