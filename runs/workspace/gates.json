@@ -1,6 +1,6 @@
 {
   "screen": "workspace",
-  "lastPassed": "G5",
+  "lastPassed": "G6",
   "gates": {
     "G1": {
       "result": "PASS",
@@ -108,7 +108,7 @@
       "checkedAt": "2026-10-03T21:33:05"
     },
     "G6": {
-      "result": null,
+      "result": "PASS",
       "failures": 0,
       "totalFailures": 0,
       "history": [
@@ -116,10 +116,15 @@
           "result": "PASS",
           "at": "2026-10-03T20:43:49",
           "violations": 0
+        },
+        {
+          "result": "PASS",
+          "at": "2026-10-03T21:47:58",
+          "violations": 0
         }
       ],
       "violations": [],
-      "checkedAt": "2026-10-03T20:43:49"
+      "checkedAt": "2026-10-03T21:47:58"
     }
   }
 }
