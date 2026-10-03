@@ -1,0 +1,12 @@
+{
+  "fileUrl": "https://www.figma.com/design/3mCgJqOTZzSE9hFDFHiR9f/fol-harness?node-id=0-1",
+  "fileKey": "3mCgJqOTZzSE9hFDFHiR9f",
+  "fileName": "fol-harness",
+  "pageNameFormat": "<화면> · 0N <단계명>",
+  "source": "2026-10-03 사용자 지정",
+  "designSystem": {
+    "note": "fol-DESIGN.md의 colors.*·typography.*·rounded.* 토큰을 이 파일에 변수로 먼저 등록해야 S4 이후 단계가 정상 동작한다. 컴포넌트 키 등은 라이브러리 등록 후 추가한다.",
+    "components": {},
+    "source": "2026-10-03 사용자 지정, 라이브러리 미등록"
+  }
+}

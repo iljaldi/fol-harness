@@ -1,0 +1,48 @@
+{
+  "gate": "G4",
+  "screen": "workspace",
+  "expect": "FAIL",
+  "note": "프레임 너비 1280",
+  "files": {
+    "s3/s3-spec.json": {
+      "purpose": "사용자가 작업 공간에서 단계별 문서와 AI 피드백을 함께 관리한다",
+      "components": [
+        { "name": "StepList", "pointIds": [], "storyIds": [3] },
+        { "name": "DocumentEditor", "pointIds": ["P1"], "storyIds": [3] },
+        { "name": "FeedbackPanel", "pointIds": ["P3"], "storyIds": [4] },
+        { "name": "ProjectSwitcher", "pointIds": [], "storyIds": [5] }
+      ],
+      "states": ["default", "empty", "loading"],
+      "hasProjectSwitcher": true,
+      "flows": [
+        { "name": "backFromPreview", "keepContent": true, "keepChat": true },
+        { "name": "onProjectSwitch", "resetStep": true, "keepLogin": true }
+      ]
+    },
+    "s4/s4-keyscreen.json": {
+      "frames": [
+        {
+          "name": "workspace-default",
+          "width": 1280,
+          "height": 960,
+          "layers": ["TopNavigation", "StepList", "DocumentEditor", "FeedbackPanel", "ProjectSwitcher"]
+        },
+        {
+          "name": "workspace-empty",
+          "width": 1440,
+          "height": 900,
+          "layers": ["TopNavigation", "StepList", "DocumentEditor", "FeedbackPanel", "ProjectSwitcher"]
+        }
+      ]
+    },
+    "gates.json": {
+      "screen": "workspace",
+      "lastPassed": "G3",
+      "gates": {
+        "G1": { "result": "PASS", "failures": 0, "violations": [] },
+        "G2": { "result": "PASS", "failures": 0, "violations": [] },
+        "G3": { "result": "PASS", "failures": 0, "violations": [] }
+      }
+    }
+  }
+}

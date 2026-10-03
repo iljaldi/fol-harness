@@ -1,0 +1,66 @@
+{
+  "gate": "G6",
+  "screen": "workspace",
+  "expect": "PASS",
+  "note": "모든 값이 rules.json 허용값",
+  "files": {
+    "s5/s5-final.json": {
+      "nodes": [
+        {
+          "name": "PrimaryButton",
+          "kind": "button",
+          "height": 48,
+          "fills": ["#0075DE"],
+          "strokes": [],
+          "radius": 9999,
+          "padding": [12, 24, 12, 24],
+          "gap": 8,
+          "fontFamily": "NotionInter",
+          "fontSize": 16,
+          "fontWeight": 500
+        },
+        {
+          "name": "UtilityButton",
+          "kind": "button",
+          "height": 44,
+          "fills": ["#FFFFFF"],
+          "strokes": ["#E6E6E6"],
+          "radius": 8,
+          "padding": [4, 14, 4, 14],
+          "gap": 4,
+          "fontFamily": "NotionInter",
+          "fontSize": 16,
+          "fontWeight": 500
+        },
+        {
+          "name": "FeatureCard",
+          "kind": "frame",
+          "fills": ["#FFFFFF"],
+          "strokes": ["#E6E6E6"],
+          "radius": 12,
+          "padding": [24, 24, 24, 24],
+          "gap": 16
+        },
+        {
+          "name": "DocumentTitle",
+          "kind": "text",
+          "fills": ["#000000"],
+          "fontFamily": "NotionInter",
+          "fontSize": 26,
+          "fontWeight": 700
+        }
+      ]
+    },
+    "gates.json": {
+      "screen": "workspace",
+      "lastPassed": "G5",
+      "gates": {
+        "G1": { "result": "PASS", "failures": 0, "violations": [] },
+        "G2": { "result": "PASS", "failures": 0, "violations": [] },
+        "G3": { "result": "PASS", "failures": 0, "violations": [] },
+        "G4": { "result": "PASS", "failures": 0, "violations": [] },
+        "G5": { "result": "PASS", "failures": 0, "violations": [] }
+      }
+    }
+  }
+}

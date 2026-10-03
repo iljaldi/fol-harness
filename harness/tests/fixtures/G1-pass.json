@@ -1,0 +1,25 @@
+{
+  "gate": "G1",
+  "screen": "workspace",
+  "expect": "PASS",
+  "note": "레퍼런스 5개, 포인트 3개",
+  "files": {
+    "s1/s1-reference.json": {
+      "screen": "workspace",
+      "references": [
+        { "id": "R1", "url": "https://uibowl.io/screens/sample-1", "app": "참고앱1" },
+        { "id": "R2", "url": "https://uibowl.io/screens/sample-2", "app": "참고앱2" },
+        { "id": "R3", "url": "https://uibowl.io/screens/sample-3", "app": "참고앱3" },
+        { "id": "R4", "url": "https://uibowl.io/screens/sample-4", "app": "참고앱4" },
+        { "id": "R5", "url": "https://uibowl.io/screens/sample-5", "app": "참고앱5" }
+      ]
+    },
+    "s2/s2-analysis.json": {
+      "points": [
+        { "id": "P1", "text": "단계 목록을 화면 좌측에 고정해 전체 진행 상태를 한눈에 보여준다", "refIds": ["R1"], "storyIds": [3], "tags": [] },
+        { "id": "P2", "text": "AI 대화 영역을 문서 편집 영역 옆에 나란히 배치해 제안을 바로 확인한다", "refIds": ["R2"], "storyIds": [3], "tags": [] },
+        { "id": "P3", "text": "전체 피드백 요청 버튼을 상단에 고정해 언제든 논리적 연결을 점검할 수 있게 한다", "refIds": ["R3"], "storyIds": [4], "tags": [] }
+      ]
+    }
+  }
+}

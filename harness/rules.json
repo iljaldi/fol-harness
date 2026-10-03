@@ -1,0 +1,63 @@
+{
+  "version": "2026-10-03",
+  "frame": { "width": 1440, "minHeight": 900, "source": "fol-DESIGN.md layout.workspace-max, PC 기준 2026-10-03 결정" },
+  "counts": {
+    "references": 5,
+    "analysisPointsMin": 3,
+    "keyscreens": { "min": 2, "max": 3 },
+    "maxGateFailures": 3,
+    "source": "r0-context.md, r5-gates.md G1·G4, r3-pipeline.md"
+  },
+  "stories": { "ids": [1, 2, 3, 4, 5, 6], "source": "fol-story-service.md 유저스토리" },
+  "spec": {
+    "requiredSections": ["purpose", "components", "states", "flows"],
+    "source": "r5-gates.md G3"
+  },
+  "ruleA": {
+    "screens": ["workspace"],
+    "backFromPreview": { "keepContent": true, "keepChat": true },
+    "onProjectSwitch": { "resetStep": true, "keepLogin": true },
+    "source": "fol-story-service.md 규칙 A, 프로젝트 전환"
+  },
+  "ruleB": {
+    "bannedWords": ["보장", "검증완료", "합격 보장", "100% 성공", "자동 승인", "강제 반영"],
+    "exceptionTag": "example",
+    "source": "fol-story-service.md 규칙 B, r5-gates.md G2"
+  },
+  "mvpExcluded": {
+    "words": ["포트폴리오 장표", "프로토타입 자동", "Figma 연동", "인터뷰 대행", "합격 예측", "채용 매칭", "멘토 연결", "공동 편집", "구독", "버전 복원"],
+    "source": "fol-PRD.md 6장, r5-gates.md G2"
+  },
+  "design": {
+    "colors": {
+      "allowed": [
+        "#000000", "#005BAB", "#0075DE", "#1AAE39", "#213183", "#2A9D99", "#31302E", "#391C57",
+        "#523410", "#615D59", "#62AEF0", "#793400", "#A39E98", "#D6B6F6", "#DD5B00", "#DDDDDD",
+        "#E6E6E6", "#F6F5F4", "#FF64C8", "#FFFFFF"
+      ],
+      "source": "fol-DESIGN.md 2장 (기본·텍스트·배경·테두리·아이콘 색상). rgba(0,0,0,0.05) 원형 미디어 버튼 배경은 hex가 아니라 별도 관리한다"
+    },
+    "fontFamily": { "allowed": ["NotionInter", "Inter"], "source": "fol-DESIGN.md 3.1" },
+    "fontSize": { "allowed": [12, 14, 15, 16, 20, 22, 24, 26, 28, 32, 40, 54, 64], "source": "fol-DESIGN.md 3.2, 4.8 (반응형 값 포함)" },
+    "fontWeight": { "allowed": [400, 500, 600, 700], "source": "fol-DESIGN.md 3.1" },
+    "radius": {
+      "allowed": [0, 4, 5, 8, 12, 16, 9999],
+      "source": "fol-DESIGN.md 4.2 (0은 '모서리 없음'으로 허용, 2026-10-03 결정)"
+    },
+    "spacing": {
+      "allowed": [0, 4, 6, 8, 12, 14, 16, 24, 28, 32],
+      "source": "fol-DESIGN.md 4.1 (0은 '간격 없음'으로 허용, 6·14는 입력창·유틸리티버튼 예외값, 2026-10-03 결정)"
+    },
+    "minHeight": {
+      "button": 44, "icon": 44, "tab": 44, "menuItem": 44,
+      "source": "fol-DESIGN.md 4.10 (아이콘 버튼·탭·메뉴 항목 최소 44×44px 터치 영역)"
+    }
+  },
+  "gates": {
+    "G5": {
+      "fields": ["status", "reason", "returnTo", "figmaLink", "date"],
+      "status": ["approved", "rejected"],
+      "returnTo": ["S3", "S4"]
+    }
+  }
+}
